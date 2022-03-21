@@ -1,5 +1,7 @@
-Record=TopLevelDocument|FileName=Connector_Sheet.SchDoc|SheetNumber=5
-Record=NoMainPathDocument|SourceDocument=Connector_Sheet.SchDoc|FileName=Controller_Sheet.SchDoc|SheetNumber=4
-Record=NoMainPathDocument|SourceDocument=Connector_Sheet.SchDoc|FileName=Power_Section.SchDoc|SheetNumber=2
-Record=NoMainPathDocument|SourceDocument=Connector_Sheet.SchDoc|FileName=Sensor_Sheet.SchDoc|SheetNumber=3
-Record=NoMainPathDocument|SourceDocument=Connector_Sheet.SchDoc|FileName=Top_Sheet.SchDoc|SheetNumber=1
+Record=TopLevelDocument|FileName=ADC_1_Section.SchDoc|SheetNumber=6
+Record=NoMainPathDocument|SourceDocument=ADC_1_Section.SchDoc|FileName=ADC_2_Section.SchDoc|SheetNumber=7
+Record=NoMainPathDocument|SourceDocument=ADC_1_Section.SchDoc|FileName=Connector_Sheet.SchDoc|SheetNumber=5
+Record=NoMainPathDocument|SourceDocument=ADC_1_Section.SchDoc|FileName=Controller_Sheet.SchDoc|SheetNumber=4
+Record=NoMainPathDocument|SourceDocument=ADC_1_Section.SchDoc|FileName=Power_Section.SchDoc|SheetNumber=2
+Record=NoMainPathDocument|SourceDocument=ADC_1_Section.SchDoc|FileName=Sensor_Sheet.SchDoc|SheetNumber=3
+Record=NoMainPathDocument|SourceDocument=ADC_1_Section.SchDoc|FileName=Top_Sheet.SchDoc|SheetNumber=1
