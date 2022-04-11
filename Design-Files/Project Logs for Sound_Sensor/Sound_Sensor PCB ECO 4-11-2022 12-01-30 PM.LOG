@@ -1,0 +1,8 @@
+Removed Pin From Net: NetName=SCLK Pin=U7-31
+Removed Pin From Net: NetName=SCLK Pin=U8-6
+Added Pin To Net: NetName=SCLK# Pin=U7-31
+Added Pin To Net: NetName=SCLK# Pin=U8-6
+Added Net: Name=SCLK#
+Added Member To Class: ClassName=U_Controller_Sheet Member=Component C19 22PF
+Added Member To Class: ClassName=U_Controller_Sheet Member=Component C20 22PF
+Added Member To Class: ClassName=U_Controller_Sheet Member=Component X4 X322540MPB4SI
