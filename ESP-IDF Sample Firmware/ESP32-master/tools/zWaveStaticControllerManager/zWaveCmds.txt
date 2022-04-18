@@ -1,0 +1,4 @@
+01,05,00,4a,c1,01,70 - add device
+
+01,03,00,20,dc - get home id
+

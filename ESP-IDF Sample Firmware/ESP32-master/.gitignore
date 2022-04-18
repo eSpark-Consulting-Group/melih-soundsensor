@@ -1,0 +1,49 @@
+# CMake build tree
+CMakeLists.txt.user
+build/
+cmake-build-*
+
+# Visual Studio Code directory
+.vscode/
+
+# KDevelop 4 IDE files
+*.kdev4
+
+# CLion
+.cproject
+.idea
+.project
+.settings
+
+# Coredump
+core
+
+# Python object files
+*.pyc
+*.pyo
+*.egg-info
+
+#kdiff3
+*.orig
+
+.DS_Store
+/xtensa-esp32-elf/
+/esp32-snippets/
+#Netbeans
+*nbproject/
+/firmware_test
+/firmware/reformat-sources.sh
+
+#Version files
+firmware/components/common/include/FirmwareVersion.h
+firmware/firmware_version
+firmware/config.mk
+
+#Python
+/__pycache__/
+
+#Lua
+/firmware/components/lua/**/*.o
+/firmware/components/lua/**/*.a
+/firmware/components/lua/**/luac
+/firmware/components/lua/**/lua

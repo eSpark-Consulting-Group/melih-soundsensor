@@ -1,0 +1,16 @@
++++ core_dump.c	2019-09-11 17:07:13.757258844 +0300
+@@ -548,7 +548,7 @@
+     const esp_partition_t *core_part;
+ 
+     ESP_COREDUMP_LOGI("Init core dump to flash");
+-    core_part = esp_partition_find_first(ESP_PARTITION_TYPE_DATA, ESP_PARTITION_SUBTYPE_DATA_COREDUMP, NULL);
++    core_part = esp_partition_find_first(ESP_PARTITION_TYPE_DATA, ESP_PARTITION_SUBTYPE_DATA_NVS, "nvs_ext");
+     if (!core_part) {
+         ESP_COREDUMP_LOGE("No core dump partition found!");
+         return;
+@@ -566,3 +566,4 @@
+ 
+ #endif
+ 
++    
+\ No newline at end of file

@@ -1,0 +1,311 @@
+menu "Hardware type"
+
+choice BOARD_TYPE
+   bool "Type of board"
+   default BOARD_TYPE_DEVCITV4
+   help
+       Specify how much output to see in bootloader logs.
+
+config BOARD_TYPE_DEVCITV4
+   bool "ESP32-DevKitC V4"
+config BOARD_TYPE_ATOM
+   bool "ATOM32"
+config BOARD_TYPE_PLUG_HUB
+   bool "Plug hub"
+config BOARD_TYPE_WATER_VALVE
+   bool "Water valve"
+
+endchoice
+
+config BOARD_TYPE
+    int
+    default 0 if BOARD_TYPE_DEVCITV4
+    default 1 if BOARD_TYPE_ATOM
+    default 2 if BOARD_TYPE_PLUG_HUB
+    default 3 if BOARD_TYPE_WATER_VALVE
+
+endmenu
+
+menu "REVISION"
+config SPIRAM
+    bool "Enable revision 2"
+    default false
+config METER_CHIP_STPM
+    bool "TRUE if meter chip STPM32 else false"
+    default false
+config LED_ACTIVE_LEVEL
+    int "Led active level (0 or 1)"
+    range 0 1
+    default 0
+config UART_API
+    bool "Enable UART API"
+    default false
+endmenu
+
+menu "Hardware Flags"
+config IS_LOW_MEMORY_DEVICE
+    bool "Compilation flag for devices with low memory capacity (Atom rev1, plug hub rev1)"
+    default false
+endmenu
+
+menu "Feature Flags"
+config LOCAL_MODE
+    bool "Enable compilation of local mode"
+    default "y" if SPIRAM
+    help
+        Define whether the source code of local mode implementation is included at compile time.
+config CLOUD_DEVICES
+    bool "Enable compilation of cloud devices"
+    default "n"
+    help
+        Define whether the source code of cloud devices implementation is included at compile time.
+config ADVANCED_SCENES
+    bool "Enable compilation of advanced scenes"
+    default "y"
+    help
+        Define whether the source code of advanced scenes implementation is included at compile time.
+endmenu
+
+menu "Log level"
+config REMOTE_LOGGING
+    bool "Enable remote logging"
+    default false
+config REMOTE_LOGLEVEL
+    int "Remote log level (0-6: ALL, TRACE, DEBUG, INFO, WARNING, ERROR, NONE)"
+    range 0 6
+    default 6
+config PROD_ESP_LOG_LEVEL
+    int "ESP log level for production builds (0-5: NONE, ERROR, WARN, INFO, DEBUG, VERBOSE)"
+    range 0 5
+    default 3
+config DEV_ESP_LOG_LEVEL
+    int "Default ESP log level for regular dev builds (0-5: NONE, ERROR, WARN, INFO, DEBUG, VERBOSE)"
+    range 0 5
+    default 4
+endmenu
+
+
+menu "GPIO Configuration"
+
+config UART_PORT
+    int "UART number for communication with ZWAVE chip"
+    range 0 2
+    default 1
+
+config UART_PORT_NAPKO
+    int "UART number for communication with NAPKO chip"
+    range 0 2
+    default 2
+
+config IO_BUTTON
+    int "IO for button"
+    range 0 33
+    default 0
+    
+config IO_TX
+    int "TX pin for UART"
+    range 0 33
+    default 17
+    
+config IO_RX
+    int "RX pin for UART"
+    range 0 33
+    default 16
+    
+config IO_LED
+    int "pin for LED"
+    range 0 33
+    default 2
+
+config IO_RESET_ZW
+    int "pin for reset ZWAVE chip"
+    range 0 33
+    default 19
+
+endmenu
+
+menu "PLUG IO"
+     depends on BOARD_TYPE_PLUG_HUB
+config IO_TXD_PIN
+    int "TX pin for Meter chip"
+    range 0 33
+    default 27
+config IO_RXD_PIN
+    int "RX pin for Meter chip"
+    range 0 33
+    default 26
+config IO_RST_PIN
+    int "Reset pin for Meter chip"
+    range 0 33
+    default 33
+config IO_RXD1_PIN
+    int "RX pin for calibration Meter chip"
+    range 0 33
+    default 23
+config IO_TXD1_PIN
+    int "RX pin for calibration Meter chip"
+    range 0 33
+    default 13
+config IO_RELAY_A_PIN
+    int "RELAY_A pin for plughub"
+    range 0 33
+    default 25
+config IO_RELAY_B_PIN
+    int "RELAY_B pin for plughub"
+    range 0 33
+    default 33
+
+endmenu
+
+menu "WATER_VALVE IO"
+depends on BOARD_TYPE_WATER_VALVE
+config INVERT_WATER_VALVE_CONTROL
+    bool "ENABLE  for Fortrezz and Dynaquip"
+    default "n"
+    help
+        ENABLE  for Fortrezz and Dynaquip DISABLE for EcoNet, Dome and other.
+config IO_LED_OPEN
+    int "LED_OPEN pin"
+    range 0 33
+    default 33
+config IO_LED_CLOSE
+    int "LED_CLOSE pin"
+    range 0 33
+    default 27
+config IO_BUTTON_OPEN
+    int "BUTTON_OPEN pin"
+    range 0 33
+    default 2
+config IO_BUTTON_CLOSE
+    int "BUTTON_CLOSE pin"
+    range 0 33
+    default 21
+config IO_HALL_OPEN
+    int "HALL_OPEN pin"
+    range 0 38
+    default 38
+config IO_HALL_CLOSE
+    int "HALL_CLOSE pin"
+    range 0 38
+    default 36
+config IO_STEP_M
+    int "STEP Motor pin"
+    range 0 33
+    default 15
+config IO_DIR_M
+    int "Direction Motor pin"
+    range 0 33
+    default 13
+config IO_EN_M
+    int "Enable Motor pin"
+    range 0 33
+    default 12
+
+endmenu
+
+
+menu "Little FS Configuration"
+
+    config ESP_VFS_LITTLEFS_MAX_PARTITIONS
+        int "Maximum Number of Partitions"
+        default 2
+        range 1 4
+        help
+            Define maximum number of partitions that can be mounted.
+
+    config ESP_VFS_LITTLEFS_MAX_FILES
+        int "Maximum number of simultaneously opened files"
+        default 8
+        range 1 64
+        help
+            Define maximum number of files that can be opened at the same time.
+
+
+    config ESP_LITTLEFS_READ_BUF_SIZE
+        int "Minimum size of a block read"
+        default 128
+        range 32 4096
+        help
+            Minimum size of a block read. All read operations will be a
+            multiple of this value.
+
+    config ESP_LITTLEFS_PROG_BUF_SIZE
+        int "Minimum size of a block program"
+        default 128
+        range 32 4096
+        help
+            Minimum size of a block program. All program operations will be a
+            multiple of this value.
+
+    config ESP_LITTLEFS_LOOKAHEAD_BUF_SIZE
+        int "Size of the lookahead buffer in bytes"
+        default 16
+        range 32 4096
+        help
+            Size of the lookahead buffer in bytes. A larger lookahead buffer
+            increases the number of blocks found during an allocation pass. The
+            lookahead buffer is stored as a compact bitmap, so each byte of RAM
+            can track 8 blocks. Must be a multiple of 4.
+
+    config ESP_LITTLEFS_CACHE_SIZE
+        int "Size of block caches"
+        default 128
+        range 32 4096
+        help
+            Size of block caches. Each cache buffers a portion of a block in RAM.
+            The littlefs needs a read cache, a program cache, and one additional
+            cache per file. Larger caches can improve performance by storing more
+            the read and program sizes, and a factor of the block size.
+
+    config ESP_LITTLEFS_PAGE_SIZE
+        int "LittleFs logical page size"
+        default 4096
+        range 4096 32768
+        help
+            Logical page size of LittleFs partition, in bytes. Must be multiple
+            of flash page size (which is usually 256 bytes).
+            Larger page sizes reduce overhead when storing large files, and
+            improve filesystem performance when reading large files.
+            Smaller page sizes reduce overhead when storing small (< page size)
+            files.
+
+    config ESP_LITTLEFS_MALLOC
+        bool "Enable LittleFs malloc"
+        default "n"
+        help
+            Enabling this option will enable malloc for LittleFs.
+
+    config ESP_LITTLEFS_INTRINSICS
+        bool "Enable LittleFs intrinsics"
+        default "y"
+        help
+            Enabling this option will disable LittleFs intrinsics.
+
+    menu "Debug Configuration"
+
+        config ESP_LITTLEFS_LOG_DEBUG
+            bool "Enable Littlefs debug messages"
+            default "y"
+            help
+                Enabling this option will print debug mesages to the console.
+
+        config ESP_LITTLEFS_LOG_WARN
+            bool "Enable LittleFs warning messages"
+            default "y"
+            help
+                Enabling this option will print warning mesages to the console.
+
+        config ESP_LITTLEFS_LOG_ERROR
+            bool "Enable LittleFs error messages"
+            default "y"
+            help
+                Enabling this option will print error mesages to the console.
+
+        config ESP_LITTLEFS_ASSERT
+            bool "Enable LittleFs assert"
+            default "y"
+            help
+                Enabling this option will enable assert for LittleFs.
+    endmenu
+
+endmenu

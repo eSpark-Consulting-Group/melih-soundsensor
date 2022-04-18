@@ -1,0 +1,33 @@
+menu "Wifi Service"
+    config WIFI_SERVICE_CONN_STA_MAXIMUM_RETRY
+        int "Maximum connections retry to AP"
+        default 5
+        help
+            Set the Maximum retry to avoid station reconnecting to the AP unlimited when the AP is really inexistent.
+    
+
+    config WIFI_SERVICE_ENABLE_SNIFFER
+        bool "Enable wifi sniffer functionality"
+        default n
+        help
+            Enable wifi sniffer functionality.
+
+    config WIFI_SERVICE_SNIFFER_QUEUE_LEN
+        depends on WIFI_SERVICE_ENABLE_SNIFFER
+        int "Size of sniffer queue"
+        default 64
+        range 8 512
+        
+        help
+            The size of queue where sniffered wifi packets saved from wifi driver callback.
+
+    config WIFI_SERVICE_SNIFFER_CHANNEL
+        depends on WIFI_SERVICE_ENABLE_SNIFFER
+        int "Wifi sniffer channel"
+        default 1
+        range 1 14
+        
+        help
+            The wifi channel of which use wifi sniffer to hear packets.
+
+endmenu

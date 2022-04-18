@@ -1,0 +1,25 @@
+[submodule "lib/esp-idf"]
+	path = lib/esp-idf
+	url = git@github.com:espressif/esp-idf.git
+[submodule "lib/googletest"]
+	path = lib/googletest
+	url = git@github.com:google/googletest.git
+	branch = master
+[submodule "docs/api"]
+	path = docs/api
+	url = git@github.com:ezloteam/API-doc.git
+	branch = master
+[submodule "lib/znet"]
+	path = firmware/components/znet
+	url = git@github.com:ezloteam/ZNet.git
+[submodule "firmware/hubplugins"]
+	path = firmware/hubplugins
+	url = git@github.com:ezloteam/HubPlugins.git
+[submodule "lib/littlefs"]
+	path = firmware/components/littlefs/littlefs-master
+	url = https://github.com/ARMmbed/littlefs.git
+	branch = master
+[submodule "firmware/components/znet"]
+	path = firmware/components/znet
+	url = git@github.com:ezloteam/ZNet.git
+	branch = esp32_idf4_branch

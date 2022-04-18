@@ -1,0 +1,25 @@
+#!/usr/bin/python3
+import glob, os, subprocess, argparse
+import sys, re
+
+source_directory = 'firmware'
+format_config_file_name = source_directory+"/"+".clang_format"
+
+def getStageFiles():
+	files = subprocess.run("git diff --cached --name-only --diff-filter=ACM", shell=True, stdout=subprocess.PIPE).stdout.split()
+	files_str = []
+	for file in files:
+		if re.match(r"(.*\.h$|.*\.cpp$|.*\.c$|.*\.hpp$)", file.decode("utf-8")):
+			files_str.append(file.decode("utf-8"))
+	return files_str
+
+def main(argv=None):
+	files_list = getStageFiles()
+	for file in files_list:
+		out = subprocess.check_output("clang-format -output-replacements-xml "+ file, shell=True)
+		if("<replacement offset=" in str(out)):
+			return ("Your code needs to be formatted in file: "+file+". Abort.")
+
+	return 0;
+if __name__ == '__main__':
+	exit(main())

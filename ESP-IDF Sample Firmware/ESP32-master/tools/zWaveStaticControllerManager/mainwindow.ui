@@ -1,0 +1,661 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>720</width>
+    <height>531</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>zWaveMgr</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QPushButton" name="btnQuit">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>430</y>
+      <width>83</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Quit</string>
+    </property>
+   </widget>
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>681</width>
+      <height>411</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>2</number>
+    </property>
+    <widget class="QWidget" name="tabTcpTools">
+     <attribute name="title">
+      <string>TCP Tools</string>
+     </attribute>
+     <widget class="QLabel" name="lbHost">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>31</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Host</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="eHostName">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>20</y>
+        <width>113</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>127.0.01</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lbPort">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>20</y>
+        <width>31</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Port</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="ePortName">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>20</y>
+        <width>113</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>2345</string>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="lstSocketIO">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>160</y>
+        <width>651</width>
+        <height>161</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lbSocketIO">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>140</y>
+        <width>71</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Socket I/O</string>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="gRole">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>330</y>
+        <width>171</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Role</string>
+      </property>
+      <property name="flat">
+       <bool>false</bool>
+      </property>
+      <property name="checkable">
+       <bool>false</bool>
+      </property>
+      <widget class="QRadioButton" name="rbClient">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>20</y>
+         <width>71</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Client</string>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="rbServer">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>20</y>
+         <width>71</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Server</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QPushButton" name="btnOpenSocket">
+      <property name="geometry">
+       <rect>
+        <x>350</x>
+        <y>20</y>
+        <width>101</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Open Socket</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lbPayloadDepHexToSend">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>50</y>
+        <width>231</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Comma separated hex to be sent</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="eTcpPayload">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>70</y>
+        <width>221</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>31,32,33,34,0a,0d</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="chkReadSocketOnDataReady">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>330</y>
+        <width>221</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Read Socket on Data Ready</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="chkSendToSocketOnReading">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>350</y>
+        <width>221</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Send ACK on each reading</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lbTcpAckToBeSent">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>50</y>
+        <width>121</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>ACK to be sent</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="eTcpAckToSend">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>70</y>
+        <width>91</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>35,0a,0d</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnCloseSocket">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>20</y>
+        <width>101</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Close Socket</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnReadSocket">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>70</y>
+        <width>101</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Read Socket</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnSendSocket">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>350</x>
+        <y>70</y>
+        <width>101</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Send Socket</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="chkCloseSocketOnWriting">
+      <property name="geometry">
+       <rect>
+        <x>400</x>
+        <y>330</y>
+        <width>201</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Close Socket upon writing</string>
+      </property>
+     </widget>
+     <zorder>lbHost</zorder>
+     <zorder>eHostName</zorder>
+     <zorder>lbPort</zorder>
+     <zorder>ePortName</zorder>
+     <zorder>lstSocketIO</zorder>
+     <zorder>lbSocketIO</zorder>
+     <zorder>btnOpenSocket</zorder>
+     <zorder>gRole</zorder>
+     <zorder>lbPayloadDepHexToSend</zorder>
+     <zorder>eTcpPayload</zorder>
+     <zorder>chkReadSocketOnDataReady</zorder>
+     <zorder>chkSendToSocketOnReading</zorder>
+     <zorder>lbTcpAckToBeSent</zorder>
+     <zorder>eTcpAckToSend</zorder>
+     <zorder>btnCloseSocket</zorder>
+     <zorder>btnReadSocket</zorder>
+     <zorder>btnSendSocket</zorder>
+     <zorder>chkCloseSocketOnWriting</zorder>
+    </widget>
+    <widget class="QWidget" name="tabUsbCdc">
+     <attribute name="title">
+      <string>USB CDC</string>
+     </attribute>
+     <widget class="QListWidget" name="lstDeviceIO">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>120</y>
+        <width>641</width>
+        <height>192</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnSendData">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>60</y>
+        <width>91</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Send Data</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lbCommaDepHexToSend">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>40</y>
+        <width>231</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Comma separated hex to be sent</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lbAckToBeSent">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>40</y>
+        <width>121</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>ACK to be sent</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnOpenDevice">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>10</y>
+        <width>92</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Open Device</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lbDeviceName">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>101</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Device Name</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="chkSendAckOnReading">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>340</y>
+        <width>221</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Send ACK on each reading</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnReadData">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>569</x>
+        <y>60</y>
+        <width>91</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Read Data</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="chkReadDeviceOnDataReady">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>320</y>
+        <width>221</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Read Device on Data Ready</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="eAckToSend">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>60</y>
+        <width>181</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>06</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="eDataToSend">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>60</y>
+        <width>231</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>01,03,00,20,dc</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnCloseDevice">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>570</x>
+        <y>10</y>
+        <width>92</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Close Device</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lbDeviceIO">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>90</y>
+        <width>241</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Device I/O</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="eDeviceName">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>10</y>
+        <width>341</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>/dev/ttyACM0</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tabZWaveController">
+     <attribute name="title">
+      <string>ZWave Controller</string>
+     </attribute>
+     <widget class="QCheckBox" name="chkHeartBeat">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>90</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Heartbeat</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lbHeartBeatDuration">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>20</y>
+        <width>61</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Interval, ms</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="sbHeartBeatDuration">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>20</y>
+        <width>81</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>false</bool>
+      </property>
+      <property name="minimum">
+       <number>10</number>
+      </property>
+      <property name="maximum">
+       <number>10000</number>
+      </property>
+      <property name="singleStep">
+       <number>10</number>
+      </property>
+      <property name="value">
+       <number>1000</number>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="listWidget">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>170</y>
+        <width>651</width>
+        <height>191</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>720</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>eHostName</tabstop>
+  <tabstop>ePortName</tabstop>
+  <tabstop>eTcpPayload</tabstop>
+  <tabstop>eTcpAckToSend</tabstop>
+  <tabstop>rbClient</tabstop>
+  <tabstop>rbServer</tabstop>
+  <tabstop>chkReadSocketOnDataReady</tabstop>
+  <tabstop>chkSendToSocketOnReading</tabstop>
+  <tabstop>chkCloseSocketOnWriting</tabstop>
+  <tabstop>btnOpenSocket</tabstop>
+  <tabstop>btnSendSocket</tabstop>
+  <tabstop>btnReadSocket</tabstop>
+  <tabstop>btnCloseSocket</tabstop>
+  <tabstop>eDataToSend</tabstop>
+  <tabstop>eAckToSend</tabstop>
+  <tabstop>chkReadDeviceOnDataReady</tabstop>
+  <tabstop>chkSendAckOnReading</tabstop>
+  <tabstop>btnOpenDevice</tabstop>
+  <tabstop>btnCloseDevice</tabstop>
+  <tabstop>btnSendData</tabstop>
+  <tabstop>btnReadData</tabstop>
+  <tabstop>btnQuit</tabstop>
+  <tabstop>lstDeviceIO</tabstop>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>lstSocketIO</tabstop>
+  <tabstop>eDeviceName</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

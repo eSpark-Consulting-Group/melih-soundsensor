@@ -1,0 +1,653 @@
+#!/usr/bin/env groovy
+
+issue_pattern = "ECMT-\\d+|EATT-\\d+|ENMC-\\d+|EFWR-\\d+|EZZB-\\d+|EIDC-\\d+"
+jira_id_enforcement = false
+
+atom_slack_channel = "#firmware_ezlo_atom32"
+plug_slack_channel = "#firmware_ezlo_plug_hub"
+def boards_revs1 = ["rev1", "rev2" ] as String[]
+def boards_revs2 = ["rev3", "plug" ] as String[]
+def boards_revs3 = ["plug2", "plug3" ] as String[]
+def boards_revs4 = ["uart", "valve" ] as String[]
+def no_deploy_boards_revs2 = ["rev1", "uart" ] as String[]
+def no_deploy_boards_revs1 = ["rev2", "plug2" ] as String[]
+def no_deploy_boards_revs3 = ["valve" ] as String[]
+
+current_branch = env.BRANCH_NAME
+git_last_commiter_email = ""
+git_info = ""
+current_build_version = ""
+current_build_msg = ""
+current_atom_ota_msg = ""
+current_atom2_ota_msg = ""
+current_atom3_ota_msg = ""
+current_plug_ota_msg = ""
+current_plug2_ota_msg = ""
+current_plug3_ota_msg = ""
+current_uart_ota_msg = ""
+current_water_valve_ota_msg = ""
+download_link = ""
+current_deploy_ver = ""
+passed_builds = []
+included_jira_ids = []
+jira_transition = []
+//jira_parent = []
+build_versions = []
+default_changelog = "\n  Changelog: "
+default_exit_error = "\n  ERROR: "
+default_jira_id_warning = "\n  MISSING JIRA ID for: "
+default_status_warning = "\n  Status Validation FAILED for: "
+result_changelog = default_changelog
+exit_error = default_exit_error
+jira_id_warning = default_jira_id_warning
+status_warning = default_status_warning
+def jira_types = ['Defect', 'Bug', 'Sub-task', 'Task', 'Story']
+def jira_statuses = ['Defect': 'Fixed', 'Bug': 'RESOLVED', 'Sub-task': 'RESOLVED', 'Task': 'RESOLVED', 'Story':'RESOLVED']
+def ready_for_qa_transitions = ['Defect': '151', 'Bug': '51', 'Sub-task': '61', 'Task': '51', 'Story': '271']
+
+def notifications2MainBranches(String build_status = 'STARTED') {
+	// build status of null means successful
+	build_status = build_status ?: 'SUCCESS'
+	if (current_branch.equals('master') || current_branch.equals('qa') || current_branch.equals('stage') || current_branch.equals( 'production') ) {
+		// Default Color Values
+		def colorName = 'RED'
+		def colorCode = '#FF0000'
+
+		// Text
+		def subject = "${build_status}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'"
+		def summary = "${subject} (${env.BUILD_URL})"
+
+		// Override default values based on build status
+		if (build_status == 'STARTED') {
+			color = 'YELLOW'
+			colorCode = '#FFFF00'
+		}
+		else if (build_status == 'SUCCESS') {
+			color = 'GREEN'
+			colorCode = '#228B22'
+			subject = "SUCCESS"
+		}
+		else {
+			color = 'RED'
+			colorCode = '#FF0000'
+		}
+
+		if ( exit_error == default_exit_error) {
+			exit_error = ""
+		}
+		if ( jira_id_warning == default_jira_id_warning ) {
+			jira_id_warning = ""
+		}
+		if ( status_warning == default_status_warning) {
+			status_warning = ""
+		}
+		if ( result_changelog == default_changelog ) {
+			result_changelog = ""
+		}
+		if ( subject == 'SUCCESS' ) {
+			subject_atom = current_atom_ota_msg
+			subject_atom2 = current_atom2_ota_msg
+			subject_atom3 = current_atom3_ota_msg
+			subject_plug = current_plug_ota_msg
+			subject_plug2 = current_plug2_ota_msg
+			subject_plug3 = current_plug3_ota_msg
+			subject_uart = current_uart_ota_msg
+			subject_water_valve = current_water_valve_ota_msg
+		}
+		else {
+			subject_atom = subject
+			subject_atom2 = subject
+			subject_atom3 = subject
+			subject_plug = subject
+			subject_plug2 = subject
+			subject_plug3 = subject
+			subject_uart = subject
+			subject_water_valve = subject
+		}
+		summary = "${subject_uart}\n${subject_atom}\n${subject_atom2}\n${subject_atom3}\n${subject_water_valve}\n${git_info} ${exit_error}${result_changelog}"
+		slackSend (channel: atom_slack_channel, color: colorCode, message: summary)
+		summary = "${subject_plug}\n${subject_plug2}\n${subject_plug3}\n${git_info} ${exit_error}${result_changelog}"
+		slackSend (channel: plug_slack_channel, color: colorCode, message: summary)
+		if ( jira_id_warning != "" || status_warning != "" ) {
+			warnings = "${jira_id_warning}${status_warning}"
+			slackSend (channel: atom_slack_channel, color: '#0000FF', message: warnings)
+			slackSend (channel: plug_slack_channel, color: '#0000FF', message: warnings)
+		}
+		if ( jira_id_warning != "") {
+			mail (to: 'jiraid-validation@ezlo.com',
+			subject: "ESP32 ${current_branch} ${env.BUILD_NUMBER} missing JIRA IDs",
+			body: " \n${git_info} \n${jira_id_warning}"
+			)
+		}
+		mail (to: 'atom32-builds@ezlo.com',
+			subject: "${build_status}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]",
+			body: " \n${subject_atom} \n\n${subject_atom2} \n\n${subject_atom3} \n\n${subject_uart} \n\n${subject_plug} \n\n${subject_plug2} \n\n${subject_plug3} \n\n${subject_water_valve} \n\n${git_info} \n${exit_error}${jira_id_warning}${status_warning}\n${result_changelog}"
+		)
+	}
+}
+
+def build_fail_email(String build_status = 'STARTED') {
+// build status of null means successful
+build_status = build_status ?: 'SUCCESS'
+	if ( build_status != 'SUCCESS' && build_status != 'WAITING' ) {
+		mail (to: "${git_last_commiter_email}",
+			subject: "${build_status}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]",
+			body: " \n Please check build failure!!! \n\n${git_info} \n${exit_error}${jira_id_warning}${status_warning}\n${result_changelog}"
+		)
+	}
+}
+
+pipeline {
+	agent none
+	options {
+		buildDiscarder(logRotator(artifactDaysToKeepStr: '60', artifactNumToKeepStr: '30', daysToKeepStr: '60', numToKeepStr: '30'))
+		timeout(90)
+		disableConcurrentBuilds()
+		timestamps()
+		retry(1)
+	}
+
+	stages {
+		stage('Jira Checks') {
+			agent any
+			steps{
+				script {
+					git_last_commiter_email = sh( script: "git --no-pager show -s --format='%ae'", returnStdout: true).trim()
+					git_info = "Git Branch: ${current_branch} Git Hash: ${env.GIT_COMMIT}"
+					lastSuccessfulBuild(passed_builds, currentBuild)
+					result_changelog = processChangeLog(included_jira_ids, passed_builds)
+					k = included_jira_ids.size()
+					for (j = 0; j < k; j++) {
+						jiraId = included_jira_ids[j]
+						//jira_parent[j] = ""
+						type_found = false
+						try {
+							def jira_issue = jiraGetIssue site: 'JIRA_MIOS', idOrKey: jiraId
+							def jira_status = jira_issue.data.fields.status.name.toString()
+							def jira_type = jira_issue.data.fields.issuetype.name.toString()
+							def old_build_version = jira_issue.data.fields.customfield_12102.toString()
+							build_versions[j] = old_build_version
+							for (x in jira_types) {
+								def current_type = x // Need to bind the label variable before the closure - can't do 'for (current_type in jira_types)'
+								if (jira_type == current_type) {
+									type_found = true
+									jira_transition[j] = ready_for_qa_transitions[current_type]
+									if ( (current_branch.equals('qa') || current_branch.equals('stage') || current_branch.equals('production') ) && jira_status != jira_statuses[current_type]) {
+										status_warning += "\n ${jiraId}:${jira_type}: - Actual: ${jira_status}  - Expected at PR time: ${jira_statuses[current_type]}"
+										jira_transition[j] = "BAD_STATUS"
+									}
+								}
+								//if (jira_type == 'Sub-task') {
+									//jira_parent[j] = jira_issue.data.fields.parent.id.toString()
+								//}
+							}
+							if (!type_found) {
+								exit_error = "\n Un-handled Jira Issue Type: - ${jira_type}. You are not supposed to commit with it!"
+								print " ${exit_error} "
+								error ()
+							}
+						}
+						catch(err) {
+							echo err.getMessage()
+							echo "Removing $jiraId from list of processed jira ids"
+							trimWrongJiraId(jiraId)
+							k = k-1
+						}
+					}
+				}
+			}
+		}
+		stage('Build without Deploy') {
+			when {
+				not {
+					anyOf {
+						branch 'master';
+						branch 'qa';
+						branch 'stage';
+						branch 'production'
+					}
+				}
+			}
+			failFast true
+			parallel {
+				stage('1_no_deploy_boards_revs1') {
+					agent {
+						docker {
+							image 'ezlo/esp32idf:4.2.1'
+							label 'fast'
+							args '-u root -v /var/lib/jenkins/.ssh:/var/jenkins_home/ssh'
+						}
+					}
+					stages{
+						stage('Prepare Environment') {
+							steps {
+								prepare_env()
+							}
+						}
+						/*stage('Unit Tests') {
+							steps {
+								script {
+									unit_tst(no_deploy_boards_revs1)
+								}
+							}
+						}*/
+						stage('Build without Deploy'){
+							steps {
+								script {
+									build_only(no_deploy_boards_revs1)
+								}
+							}
+						}
+					}
+				}
+
+				stage('2_no_deploy_boards_revs2') {
+					agent {
+						docker {
+							image 'ezlo/esp32idf:4.2.1'
+							label 'fast'
+							args '-u root -v /var/lib/jenkins/.ssh:/var/jenkins_home/ssh'
+						}
+					}
+					stages{
+						stage('Prepare Environment') {
+							steps {
+								prepare_env()
+							}
+						}
+						/*stage('Unit Tests') {
+							steps {
+								script {
+									unit_tst(no_deploy_boards_revs2)
+								}
+							}
+						}*/
+						stage('Build without Deploy'){
+							steps {
+								script {
+									build_only(no_deploy_boards_revs2)
+								}
+							}
+						}
+					}
+				}
+
+				stage('3_no_deploy_boards_revs3') {
+					agent {
+						docker {
+							image 'ezlo/esp32idf:4.2.1'
+							label 'fast'
+							args '-u root -v /var/lib/jenkins/.ssh:/var/jenkins_home/ssh'
+						}
+					}
+					stages{
+						stage('Prepare Environment') {
+							steps {
+								prepare_env()
+							}
+						}
+						stage('Check Pretty') {
+							steps {
+								script {
+									check_pret()
+								}
+							}
+						}
+						/*stage('Unit Tests') {
+							steps {
+								script {
+									unit_tst(no_deploy_boards_revs3)
+								}
+							}
+						}*/
+						stage('Build without Deploy'){
+							steps {
+								script {
+									build_only(no_deploy_boards_revs3)
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		stage('Build with Deploy') {
+			when {
+				anyOf {
+					branch 'master';
+					branch 'qa';
+					branch 'stage';
+					branch 'production'
+				}
+			}
+			failFast true
+			parallel {
+				stage('1_boards_revs1') {
+					agent {
+						docker {
+							image 'ezlo/esp32idf:4.2.1'
+							label 'fast'
+							args '-u root -v /var/lib/jenkins/.ssh:/var/jenkins_home/ssh'
+						}
+					}
+					stages{
+						stage('Prepare Environment') {
+							steps {
+								prepare_env()
+							}
+						}
+						stage('Check Pretty') {
+							steps {
+								script {
+									check_pret()
+								}
+							}
+						}
+						/*stage('Unit Tests') {
+							steps {
+								script {
+									unit_tst(boards_revs1)
+								}
+							}
+						}*/
+						stage('Build with deploy') {
+							steps {
+								script {
+									build_and_deploy(boards_revs1)
+									current_atom_ota_msg = readFile "${env.WORKSPACE}/firmware/a_otamsg"
+									current_atom2_ota_msg = readFile "${env.WORKSPACE}/firmware/a2_otamsg"
+								}
+							}
+						}
+					}
+				}
+				stage('2_boards_revs2') {
+					agent {
+						docker {
+							image 'ezlo/esp32idf:4.2.1'
+							label 'fast'
+							args '-u root -v /var/lib/jenkins/.ssh:/var/jenkins_home/ssh'
+						}
+					}
+					stages{
+						stage('Prepare Environment') {
+							steps {
+								prepare_env()
+							}
+						}
+						/*stage('Unit Tests') {
+							steps {
+								script {
+									unit_tst(boards_revs2)
+								}
+							}
+						}*/
+						stage('Build with deploy') {
+							steps {
+								script {
+									build_and_deploy(boards_revs2)
+									current_atom3_ota_msg = readFile "${env.WORKSPACE}/firmware/a3_otamsg"
+									current_plug_ota_msg = readFile "${env.WORKSPACE}/firmware/p_otamsg"
+								}
+							}
+						}
+					}
+				}
+				stage('3_boards_revs3') {
+					agent {
+						docker {
+							image 'ezlo/esp32idf:4.2.1'
+							label 'fast'
+							args '-u root -v /var/lib/jenkins/.ssh:/var/jenkins_home/ssh'
+						}
+					}
+					stages{
+						stage('Prepare Environment') {
+							steps {
+								prepare_env()
+							}
+						}
+						/*stage('Unit Tests') {
+							steps {
+								script {
+									unit_tst(boards_revs3)
+								}
+							}
+						}*/
+						stage('Build with deploy') {
+							steps {
+								script {
+									build_and_deploy(boards_revs3)
+									current_plug2_ota_msg = readFile "${env.WORKSPACE}/firmware/p2_otamsg"
+									current_plug3_ota_msg = readFile "${env.WORKSPACE}/firmware/p3_otamsg"
+								}
+							}
+						}
+					}
+				}
+				stage('4_boards_revs4') {
+					agent {
+						docker {
+							image 'ezlo/esp32idf:4.2.1'
+							label 'fast'
+							args '-u root -v /var/lib/jenkins/.ssh:/var/jenkins_home/ssh'
+						}
+					}
+					stages{
+						stage('Prepare Environment') {
+							steps {
+								prepare_env()
+							}
+						}
+						/*stage('Unit Tests') {
+							steps {
+								script {
+									unit_tst(boards_revs4)
+								}
+							}
+						}*/
+						stage('Build with deploy') {
+							steps {
+								script {
+									build_and_deploy(boards_revs4)
+									current_uart_ota_msg = readFile "${env.WORKSPACE}/firmware/u_otamsg"
+									current_water_valve_ota_msg = readFile "${env.WORKSPACE}/firmware/w_otamsg"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		stage('Jira Updates') {
+			agent any
+			when {
+				anyOf {
+					branch 'master';
+					branch 'qa';
+					branch 'stage';
+					branch 'production'
+				}
+			}
+			steps{
+				script {
+					def comment = [ body: "${current_build_msg}" ]
+					for (j = 0; j <included_jira_ids.size(); j++) {
+						def new_val = current_build_msg
+						if (build_versions[j] != "" && build_versions[j] != "null") {
+							new_val = "${build_versions[j]}; ${new_val}"
+						}
+						def build_version = [fields: [customfield_12102: "${new_val}"]]
+						jiraAddComment site: 'JIRA_MIOS', idOrKey: included_jira_ids[j], input: comment
+						jiraEditIssue site: 'JIRA_MIOS', idOrKey: included_jira_ids[j], issue: build_version
+						if (current_branch.equals('qa')) {
+							//if (jira_parent[j] != "") {
+								//def current_jira_parent = jiraGetIssue site: 'JIRA_MIOS', idOrKey: jira_parent[j]
+								//def parent_project = current_jira_parent.data.fields.project.key
+								//def test_issue = [fields: [ project: [key: "${parent_project}"],
+									//summary: "${included_jira_ids[j]} QA SubTask created from Jenkins.",
+									//description: "Test subtask ${included_jira_ids[j]} in build ${current_build_msg}.",
+									//issuetype: [ name: 'Sub-task'],
+									//parent: [ id: "${jira_parent[j]}"]]]
+								//jiraNewIssue site: 'JIRA_MIOS', issue: test_issue
+							//}
+							if ( jira_transition[j] != "BAD_STATUS") {
+								def current_jira_transition = [transition: [id: "${jira_transition[j]}"]]
+								jiraTransitionIssue site: 'JIRA_MIOS', idOrKey: included_jira_ids[j], input: current_jira_transition
+							}
+						}
+					}
+				}
+			}
+		}
+		stage('triggerk8sCI') {
+		agent any
+			when {
+				anyOf {
+					branch 'qa'
+				}
+			}
+			steps{
+				script {
+					withCredentials([string(credentialsId: 'qa-webhook', variable: 'TOKEN')]) {
+						sh " cd firmware && ./k8stest.sh TOKEN=${TOKEN} DOWNLOAD_LINK=${download_link} DEPLOY_VERSION=${current_deploy_ver}"
+					}
+				}
+			}
+		}
+	}
+
+	post {
+		always {
+			notifications2MainBranches currentBuild.result
+		}
+		failure {
+			build_fail_email currentBuild.result
+		}
+	}
+}
+
+def lastSuccessfulBuild(passed_builds, build) {
+	if (build != null && build.result != 'SUCCESS') {
+		passed_builds.add(build)
+		lastSuccessfulBuild(passed_builds, build.getPreviousBuild())
+		print ' checking prev build for success '
+	}
+}
+
+@NonCPS
+String processChangeLog(included_jira_ids, included_builds) {
+	log = default_changelog
+	for (int x = 0; x < included_builds.size(); x++) {
+		def running_build = included_builds[x];
+		def changelog_sets = running_build.rawBuild.changeSets
+		for (int i = 0; i < changelog_sets.size(); i++) {
+			def entries = changelog_sets[i].items
+			for (int j = 0; j < entries.length; j++) {
+				def entry = entries[j]
+				log += "\n * ${entry.msg} by ${entry.author}"
+				String msg = entry.msg
+				def id_found = false
+				msg.findAll(issue_pattern).each {jira_id ->
+					if ( 0 == included_jira_ids.count{it == jira_id} ) {
+						included_jira_ids.push(jira_id)
+					}
+					id_found = true
+				}
+				if ( !id_found ) {
+					if ( jira_id_enforcement ) {
+						exit_error = "\n Aborting build since changelog contains commits without jira Id in message. issue_pattern: ${issue_pattern} CommitHash:${entry.commitId}  CommitMessage: ${entry.msg}"
+						print " ${exit_error} "
+						error ()
+					} else {
+						jira_id_warning += "\n * CommitHash:${entry.commitId} CommitMessage: ${entry.msg}"
+					}
+				}
+			}
+		}
+	}
+	return log;
+}
+void trimWrongJiraId(jiraId_to_exclude) {
+	trimmed_jira_ids = []
+	for (int i = 0; i < included_jira_ids.size(); i++) {
+		tmp_jiraId = included_jira_ids[j]
+		if ( "$tmp_jiraId" != "$jiraId_to_exclude" ) {
+			trimmed_jira_ids.push(tmp_jiraId)
+		}
+	}
+	included_jira_ids=trimmed_jira_ids
+}
+void prepare_env() {
+	script {
+		sh 'cp -R /var/jenkins_home/ssh /root/.ssh'
+		sh 'chown -R root:root /root/.ssh'
+		sh 'git submodule update --init --recursive'
+	}
+}
+void unit_tst(String[] my_boards) {
+	script {
+		for( board_rev in my_boards ) {
+			dir('firmware/build') {
+				sh "cd .. && idf.py -DCMAKE_CONFIG_BOARD_TYPE=$board_rev -DCMAKE_CONFIG_INITIALBRANCH=${current_branch} -DPROD_LOGS=ON -DBUILD_FOR_LINUX=ON check"
+				deleteDir()
+			}
+		}
+	}
+}
+void check_pret() {
+	script {
+		dir('firmware/build') {
+			sh "cd .. && idf.py -DCMAKE_CONFIG_BOARD_TYPE=rev2 -DCMAKE_CONFIG_INITIALBRANCH=${current_branch} -DPROD_LOGS=ON set-target esp32 pretty"
+			deleteDir()
+		}
+	}
+}
+void build_only(String[] my_boards) {
+	script {
+		for( board_rev in my_boards ) {
+			timeout(20) {
+				dir('firmware/build') {
+					sh "cd .. && idf.py -DCMAKE_CONFIG_BOARD_TYPE=$board_rev -DCMAKE_CONFIG_INITIALBRANCH=${current_branch} -DPROD_LOGS=ON set-target esp32 build"
+					deleteDir()
+				}
+			}
+		}
+	}
+}
+void build_and_deploy(String[] my_boards) {
+	script {
+		switch ( current_branch ) {
+			case 'master':
+				deploy_env = "dev"
+				break
+			case 'qa':
+				deploy_env = "qa"
+				break
+			case 'stage':
+				deploy_env = "stg"
+				break
+			case 'production':
+				deploy_env = "live"
+				break
+		}
+		for( board_rev in my_boards ) {
+			timeout(60) {
+				dir('firmware/build') {
+					sh "cd .. && idf.py -DCMAKE_CONFIG_BOARD_TYPE=$board_rev -DCMAKE_CONFIG_INITIALBRANCH=${current_branch} -DPROD_LOGS=ON set-target esp32 build"
+					sh 'cp cmakeconfig/version/firmware_version ..'
+					// Deploy
+					sh "cd .. && idf.py -DBATCH_BUILD=1 deploy"
+					sh "printf ${deploy_env}>../deploy_env && cd .. && idf.py -DBATCH_BUILD=1 deploy"
+
+					deleteDir()
+				}
+			}
+		}
+		current_build_version = readFile "${env.WORKSPACE}/firmware/firmware_version"
+		current_build_msg = readFile "${env.WORKSPACE}/firmware/buildmsg"
+		download_link = readFile "${env.WORKSPACE}/firmware/dwnlink"
+		current_deploy_ver = readFile "${env.WORKSPACE}/firmware/deployver"
+	}
+}

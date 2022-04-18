@@ -1,0 +1,16 @@
+#pragma once
+
+#include "WhenBlockIsDateRange.h"
+#include "WhenBlockIsUnknowDeviceDetected.h"
+#include "WhenBlockIsDeviceDetected.h"
+#include "WhenBlockHasAtLeastOneDictionaryValue.h"
+#include "WhenBlockIsUserLockOperation.h"
+#include "WhenBlockEqual.h"
+#include "WhenBlockNot.h"
+#include "WhenBlockOr.h"
+#include "WhenBlockAnd.h"
+#include "WhenBlockIsOnce.h"
+#include "WhenBlockIsSunState.h"
+#include "WhenBlockIsDate.h"
+#include "WhenBlockInterval.h"
+#include "WhenBlockIsItemState.h"

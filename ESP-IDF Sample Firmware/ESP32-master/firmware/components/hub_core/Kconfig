@@ -1,0 +1,30 @@
+menu "Hardware type"
+
+choice BOARD_TYPE
+   bool "Type of board"
+   default BOARD_TYPE_DEVCITV4
+   help
+       Specify how much output to see in bootloader logs.
+
+config BOARD_TYPE_DEVCITV4
+   bool "ESP32-DevKitC V4"
+config BOARD_TYPE_REV_1
+   bool "First revision board from China"
+config BOARD_TYPE_PLUG_HUB
+   bool "Plug hub"
+endchoice
+
+config BOARD_TYPE
+    int
+    default 0 if BOARD_TYPE_DEVCITV4
+    default 1 if BOARD_TYPE_REV_1 
+    default 2 if BOARD_TYPE_PLUG_HUB
+
+endmenu
+
+menu "Remote logger"
+config REMOTE_LOGGING
+    bool "Enable remote logging"
+    default false
+
+endmenu

@@ -1,0 +1,9 @@
+build
+buildconfig
+config.cmake
+sdkconfig*
+*.old
+lua/*.zip
+lua/*.tar
+components/scriptholder/*.h
+components/zwave/resources/*.dat

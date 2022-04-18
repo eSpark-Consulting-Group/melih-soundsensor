@@ -1,0 +1,2 @@
+COMPONENT_SRCDIRS := gasonpp-1.2.2-1-g7ae3463/src
+COMPONENT_ADD_INCLUDEDIRS := gasonpp-1.2.2-1-g7ae3463/src

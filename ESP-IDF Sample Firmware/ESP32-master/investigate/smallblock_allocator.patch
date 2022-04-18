@@ -1,0 +1,480 @@
+diff --git a/components/heap/CMakeLists.txt b/components/heap/CMakeLists.txt
+index 6492aefd5..8f382a689 100644
+--- a/components/heap/CMakeLists.txt
++++ b/components/heap/CMakeLists.txt
+@@ -7,6 +7,10 @@ if(NOT CONFIG_HEAP_POISONING_DISABLED)
+     list(APPEND COMPONENT_SRCS "multi_heap_poisoning.c")
+ endif()
+ 
++if(CONFIG_HEAP_SMALLBLOCK)
++    list(APPEND COMPONENT_SRCS "smallblock.c")
++endif()
++
+ set(COMPONENT_ADD_INCLUDEDIRS "include")
+ 
+ set(COMPONENT_REQUIRES "")
+diff --git a/components/heap/Kconfig b/components/heap/Kconfig
+index 8745561ed..0b778b5e0 100644
+--- a/components/heap/Kconfig
++++ b/components/heap/Kconfig
+@@ -1,5 +1,12 @@
+ menu "Heap memory debugging"
+ 
++config HEAP_SMALLBLOCK
++    bool "Enable small memory block allocator"
++    help
++        Enables small memory block allocator.
++
++        TBD.
++
+ choice HEAP_CORRUPTION_DETECTION
+     prompt "Heap corruption detection"
+     default HEAP_POISONING_DISABLED
+diff --git a/components/heap/component.mk b/components/heap/component.mk
+index 77fd79971..899ffb204 100644
+--- a/components/heap/component.mk
++++ b/components/heap/component.mk
+@@ -7,6 +7,9 @@ COMPONENT_OBJS := heap_caps_init.o heap_caps.o multi_heap.o heap_trace.o
+ ifndef CONFIG_HEAP_POISONING_DISABLED
+ COMPONENT_OBJS += multi_heap_poisoning.o
+ 
++ifdef CONFIG_HEAP_SMALLBLOCK
++COMPONENT_OBJS += smallblock.o
++
+ ifdef CONFIG_HEAP_TASK_TRACKING
+ COMPONENT_OBJS += heap_task_info.o
+ endif
+diff --git a/components/heap/heap_caps_init.c b/components/heap/heap_caps_init.c
+index 55d40d9c6..792edc473 100644
+--- a/components/heap/heap_caps_init.c
++++ b/components/heap/heap_caps_init.c
+@@ -24,6 +24,10 @@
+ #include "freertos/FreeRTOS.h"
+ #include "freertos/task.h"
+ 
++#if CONFIG_HEAP_SMALLBLOCK
++#include "smallblock.h"
++#endif
++
+ static const char *TAG = "heap_init";
+ 
+ /* Linked-list of registered heaps */
+@@ -150,6 +154,10 @@ void heap_caps_init()
+             SLIST_INSERT_AFTER(&heaps_array[i-1], &heaps_array[i], next);
+         }
+     }
++
++#if CONFIG_HEAP_SMALLBLOCK
++    smallblock_allocator_init();
++#endif
+ }
+ 
+ esp_err_t heap_caps_add_region(intptr_t start, intptr_t end)
+diff --git a/components/heap/include/smallblock.h b/components/heap/include/smallblock.h
+new file mode 100644
+index 000000000..923e2c777
+--- /dev/null
++++ b/components/heap/include/smallblock.h
+@@ -0,0 +1,7 @@
++#include <stddef.h>
++#include <stdbool.h>
++
++void smallblock_allocator_init(void);
++void *smallblock_allocator_alloc(size_t size);
++bool smallblock_allocator_dealloc(void *p, size_t size);
++size_t smallblock_allocator_manage(void *p, size_t size);
+diff --git a/components/heap/smallblock.c b/components/heap/smallblock.c
+new file mode 100644
+index 000000000..74bbcdf5a
+--- /dev/null
++++ b/components/heap/smallblock.c
+@@ -0,0 +1,329 @@
++#include <stdlib.h>
++#include <stdint.h>
++#include <stdbool.h>
++#include <assert.h>
++#ifdef ESP_PLATFORM
++#include "freertos/FreeRTOS.h"
++#include "esp_heap_caps.h"
++#include "heap_private.h"
++#define SMALLBLOCK_MALLOC heap_caps_malloc_default
++#define SMALLBLOCK_FREE heap_caps_free
++#define SMALLBLOCK_API IRAM_ATTR
++#else
++#include <pthread.h>
++#define SMALLBLOCK_MALLOC malloc
++#define SMALLBLOCK_FREE free
++#define SMALLBLOCK_API
++#endif
++
++// MEM CHUNK
++
++typedef struct smallblock_chunk_t smallblock_chunk_t;
++struct smallblock_chunk_t
++{
++    uint8_t first_available_block; // index of first free block
++    uint8_t available_blocks; // total free blocks
++    smallblock_chunk_t *next_chunk;
++    uint8_t data[];
++};
++
++static void SMALLBLOCK_API smallblock_chunk_init(smallblock_chunk_t *chunk, size_t block_size, uint8_t blocks_count)
++{
++    assert(chunk);
++    assert(block_size);
++    assert(blocks_count);
++    chunk->first_available_block = 0;
++    chunk->available_blocks = blocks_count;
++    uint8_t *index_ptr = chunk->data;
++    for (uint8_t i = 0; i < blocks_count; index_ptr += block_size)
++    {
++        *index_ptr = ++i;
++    }
++}
++
++static void * SMALLBLOCK_API smallblock_chunk_alloc(smallblock_chunk_t *chunk, size_t block_size)
++{
++    assert(chunk);
++    assert(block_size);
++    if (!chunk->available_blocks)
++    {
++        return NULL;
++    }
++    uint8_t *result = chunk->data + (chunk->first_available_block * block_size);
++    chunk->first_available_block = *result;
++    --chunk->available_blocks;
++    return result;
++}
++
++static void SMALLBLOCK_API smallblock_chunk_dealloc(smallblock_chunk_t *chunk, void *p, size_t block_size)
++{
++    assert(chunk);
++    assert(p);
++    assert(block_size);
++    uint8_t *to_release = (uint8_t *)p;
++    assert(to_release >= chunk->data);
++    *to_release = chunk->first_available_block;
++    assert((size_t)(to_release - chunk->data) % block_size == 0);
++    chunk->first_available_block = (uint8_t)((size_t)(to_release - chunk->data) / block_size);
++    ++chunk->available_blocks;
++}
++
++// MEM FIXED
++
++typedef struct smallblock_fixed_t
++{
++    size_t block_size;
++    uint8_t blocks_count; // in chunk
++    smallblock_chunk_t *chunks; // head of list
++    // cache
++    smallblock_chunk_t *alloc_chunk;
++    smallblock_chunk_t *dealloc_chunk;
++} smallblock_fixed_t;
++
++static void SMALLBLOCK_API smallblock_fixed_init(smallblock_fixed_t *fix, size_t block_size)
++{
++    assert(fix);
++    assert(block_size);
++    fix->block_size = block_size;
++    fix->blocks_count = (uint8_t)(256 - (sizeof(smallblock_chunk_t) + block_size - 1) / block_size);
++    fix->chunks = NULL;
++    fix->alloc_chunk = NULL;
++    fix->dealloc_chunk = NULL;
++}
++
++static void * SMALLBLOCK_API smallblock_fixed_alloc(smallblock_fixed_t *fix)
++{
++    assert(fix);
++    if (!fix->alloc_chunk || fix->alloc_chunk->available_blocks == 0)
++    {
++        for (smallblock_chunk_t *i = fix->chunks; ; i = i->next_chunk)
++        {
++            if (!i)
++            {
++                smallblock_chunk_t *chunk = (smallblock_chunk_t *)SMALLBLOCK_MALLOC(256 * fix->block_size);
++                if(!chunk)
++                {
++                    return NULL;
++                }
++                smallblock_chunk_init(chunk, fix->block_size, fix->blocks_count);
++                /// list insert
++                chunk->next_chunk = fix->chunks;
++                fix->chunks = chunk;
++                ///
++                fix->alloc_chunk = chunk;
++                //fix->dealloc_chunk = chunk;
++                break;
++            }
++            if (i->available_blocks > 0)
++            {
++                fix->alloc_chunk = i;
++                break;
++            }
++        }
++    }
++    assert(fix->alloc_chunk);
++    assert(fix->alloc_chunk->available_blocks > 0);
++    return smallblock_chunk_alloc(fix->alloc_chunk, fix->block_size);
++}
++
++static bool SMALLBLOCK_API smallblock_fixed_dealloc(smallblock_fixed_t *fix, void *p)
++{
++    assert(fix);
++    assert(p);
++    if (!fix->dealloc_chunk || (p >= (void *)fix->dealloc_chunk->data && p < (void *)(fix->dealloc_chunk->data + fix->block_size * fix->blocks_count)))
++    {
++        for (smallblock_chunk_t *i = fix->chunks; ; i = i->next_chunk)
++        {
++            if (!i)
++            {
++                return false;
++            }
++            if (p >= (void *)i->data && p < (void *)(i->data + fix->block_size * fix->blocks_count))
++            {
++                fix->dealloc_chunk = i;
++                break;
++            }
++        }
++    }
++    assert(fix->dealloc_chunk);
++    smallblock_chunk_dealloc(fix->dealloc_chunk, p, fix->block_size);
++    // dealloc empty chunk
++    /// TODO: dealloc empty chunk if count of emty chunks is greater than 1
++    if (fix->dealloc_chunk->available_blocks == fix->blocks_count)
++    {
++        /// list remove
++        if (fix->chunks == fix->dealloc_chunk)
++        {
++            fix->chunks = fix->dealloc_chunk->next_chunk;
++        } else
++        for (smallblock_chunk_t *i = fix->chunks; i; i = i->next_chunk)
++        {
++            if (i->next_chunk == fix->dealloc_chunk)
++            {
++                i->next_chunk = fix->dealloc_chunk->next_chunk;
++                break;
++            }
++        }
++        if (fix->alloc_chunk == fix->dealloc_chunk)
++        {
++            fix->alloc_chunk = NULL;
++        }
++        ///
++        SMALLBLOCK_FREE(fix->dealloc_chunk);
++        fix->dealloc_chunk = NULL;
++    }
++    return true;
++}
++
++static bool SMALLBLOCK_API smallblock_fixed_manage(smallblock_fixed_t *fix, void *p)
++{
++    assert(fix);
++    assert(p);
++    if (!fix->dealloc_chunk || (p >= (void *)fix->dealloc_chunk->data && p < (void *)(fix->dealloc_chunk->data + fix->block_size * fix->blocks_count)))
++    {
++        for (smallblock_chunk_t *i = fix->chunks; ; i = i->next_chunk)
++        {
++            if (!i)
++            {
++                return false;
++            }
++            if (p >= (void *)i->data && p < (void *)(i->data + fix->block_size * fix->blocks_count))
++            {
++                break;
++            }
++        }
++    }
++    return true;
++}
++
++// MEM ALLOCATOR
++
++#define SMALLBLOCK_ALLOCATOR_MAX_BLOCK_SIZE 64
++
++typedef struct smallblock_allocator_t
++{
++#ifdef ESP_PLATFORM
++    portMUX_TYPE lock;
++#else
++    pthread_mutex_t lock;
++#endif
++    smallblock_fixed_t blocks[SMALLBLOCK_ALLOCATOR_MAX_BLOCK_SIZE + 1];
++} smallblock_allocator_t;
++
++static smallblock_allocator_t small_allocator = {
++#ifdef ESP_PLATFORM
++    .lock = portMUX_INITIALIZER_UNLOCKED
++#else
++    .lock = PTHREAD_MUTEX_INITIALIZER
++#endif
++};
++
++void SMALLBLOCK_API smallblock_allocator_init(void)
++{
++//#ifdef ESP_PLATFORM
++//    portENTER_CRITICAL(&small_allocator.lock);
++//#else
++//    pthread_mutex_lock(&small_allocator.lock);
++//#endif
++    for (size_t i = 1; i < SMALLBLOCK_ALLOCATOR_MAX_BLOCK_SIZE; ++i)
++    {
++        smallblock_fixed_init(&small_allocator.blocks[i], i);
++    }
++//#ifdef ESP_PLATFORM
++//    portEXIT_CRITICAL(&small_allocator.lock);
++//#else
++//    pthread_mutex_unlock(&small_allocator.lock);
++//#endif
++}
++
++void * SMALLBLOCK_API smallblock_allocator_alloc(size_t size)
++{
++    void *result;
++    if (size > SMALLBLOCK_ALLOCATOR_MAX_BLOCK_SIZE)
++    {
++        result = NULL;
++    } else
++    {
++#ifdef ESP_PLATFORM
++        portENTER_CRITICAL(&small_allocator.lock);
++#else
++        pthread_mutex_lock(&small_allocator.lock);
++#endif
++        result = smallblock_fixed_alloc(&small_allocator.blocks[size]);
++#ifdef ESP_PLATFORM
++        portEXIT_CRITICAL(&small_allocator.lock);
++#else
++        pthread_mutex_unlock(&small_allocator.lock);
++#endif
++    }
++    return result;
++}
++
++bool SMALLBLOCK_API smallblock_allocator_dealloc(void *p, size_t size)
++{
++    if (!p)
++    {
++        return false;
++    }
++    bool result = false;
++#ifdef ESP_PLATFORM
++    portENTER_CRITICAL(&small_allocator.lock);
++#else
++    pthread_mutex_lock(&small_allocator.lock);
++#endif
++    if (size)
++    {
++        result = smallblock_fixed_dealloc(&small_allocator.blocks[size], p);
++    } else
++    // size == 0, search block...
++    for (size_t i = 1; i < SMALLBLOCK_ALLOCATOR_MAX_BLOCK_SIZE; ++i)
++    {
++        if (smallblock_fixed_dealloc(&small_allocator.blocks[i], p))
++        {
++            result = true;
++            break;
++        }
++    }
++#ifdef ESP_PLATFORM
++    portEXIT_CRITICAL(&small_allocator.lock);
++#else
++    pthread_mutex_unlock(&small_allocator.lock);
++#endif
++    return result;
++}
++
++size_t SMALLBLOCK_API smallblock_allocator_manage(void *p, size_t size)
++{
++    if (!p)
++    {
++        return 0;
++    }
++    size_t result = 0;
++#ifdef ESP_PLATFORM
++    portENTER_CRITICAL(&small_allocator.lock);
++#else
++    pthread_mutex_lock(&small_allocator.lock);
++#endif
++    if (size)
++    {
++        if (smallblock_fixed_manage(&small_allocator.blocks[size], p))
++        {
++            result = small_allocator.blocks[size].block_size;
++        }
++    } else
++        // size == 0, search block...
++        for (size_t i = 1; i < SMALLBLOCK_ALLOCATOR_MAX_BLOCK_SIZE; ++i)
++        {
++            if (smallblock_fixed_manage(&small_allocator.blocks[i], p))
++            {
++                result = small_allocator.blocks[i].block_size;
++                break;
++            }
++        }
++#ifdef ESP_PLATFORM
++    portEXIT_CRITICAL(&small_allocator.lock);
++#else
++    pthread_mutex_unlock(&small_allocator.lock);
++#endif
++    return result;
++}
+diff --git a/components/newlib/syscalls.c b/components/newlib/syscalls.c
+index d1c06a472..f403810d3 100644
+--- a/components/newlib/syscalls.c
++++ b/components/newlib/syscalls.c
+@@ -23,6 +23,9 @@
+ #include "freertos/FreeRTOS.h"
+ #include "esp_heap_caps.h"
+ 
++#if CONFIG_HEAP_SMALLBLOCK
++#include "smallblock.h"
++#endif
+ 
+ /*
+  These contain the business logic for the malloc() and realloc() implementation. Because of heap tracing
+@@ -34,16 +37,45 @@ extern void *heap_caps_realloc_default( void *ptr, size_t size );
+ 
+ void* IRAM_ATTR _malloc_r(struct _reent *r, size_t size)
+ {
++#if CONFIG_HEAP_SMALLBLOCK
++    void* p = smallblock_allocator_alloc( size );
++    if (p) {
++        return p;
++    }
++#endif
+     return heap_caps_malloc_default( size );
+ }
+ 
+ void IRAM_ATTR _free_r(struct _reent *r, void* ptr)
+ {
++#if CONFIG_HEAP_SMALLBLOCK
++    if (smallblock_allocator_dealloc( ptr, 0 )) {
++        return;
++    }
++#endif
+     heap_caps_free( ptr );
+ }
+ 
+ void* IRAM_ATTR _realloc_r(struct _reent *r, void* ptr, size_t size)
+ {
++#if CONFIG_HEAP_SMALLBLOCK
++    size_t old_size = smallblock_allocator_manage( ptr, 0 );
++    if (old_size) {
++        if (old_size >= size) {
++            return ptr;
++        }
++        void* new_ptr = smallblock_allocator_alloc( size );
++        if (!new_ptr) {
++            new_ptr = heap_caps_malloc_default( size );
++            if (!new_ptr) {
++                return NULL;
++            }
++        }
++        memcpy( new_ptr, ptr, old_size );
++        smallblock_allocator_dealloc( ptr, old_size );
++        return new_ptr;
++    }
++#endif
+     return heap_caps_realloc_default( ptr, size );
+ }
+ 
