@@ -1,0 +1,168 @@
+Added Component: Designator=MK2(ICS-40730)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "https://www.invensense.com/wp-content/uploads/2017/01/ICS-40730-Datasheet.pdf?src-supplier=Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://www.invensense.com/wp-content/uploads/2017/01/ICS-40730-Datasheet.pdf?src-supplier=Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "http://www.invensense.com/wp-content/uploads/2018/12/DS-000139-ICS-40730-v1.0.pdf?src-supplier=Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://www.invensense.com/wp-content/uploads/2018/12/DS-000139-ICS-40730-v1.0.pdf?src-supplier=Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Impedance"; Value = "750R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "TDK InvenSense"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "ICS-40730"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Supply Current"; Value = "285uA"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Output Type"; Value = "Analog"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Cut Tape"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "1=3.61000, 10=2.99000, 25=2.76000, 50=2.59000, 100=2.43000 (USD)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS Compliant"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Shape"; Value = "Rectangular"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock 1"; Value = "51"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Newark"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "69AC5942"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Termination"; Value = "Solder"; VariantName = "[No Variations]"
+Added Component: Designator=MK3(ICS-40730)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "https://www.invensense.com/wp-content/uploads/2017/01/ICS-40730-Datasheet.pdf?src-supplier=Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://www.invensense.com/wp-content/uploads/2017/01/ICS-40730-Datasheet.pdf?src-supplier=Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "http://www.invensense.com/wp-content/uploads/2018/12/DS-000139-ICS-40730-v1.0.pdf?src-supplier=Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://www.invensense.com/wp-content/uploads/2018/12/DS-000139-ICS-40730-v1.0.pdf?src-supplier=Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Impedance"; Value = "750R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "TDK InvenSense"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "ICS-40730"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Supply Current"; Value = "285uA"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Output Type"; Value = "Analog"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Cut Tape"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "1=3.61000, 10=2.99000, 25=2.76000, 50=2.59000, 100=2.43000 (USD)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS Compliant"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Shape"; Value = "Rectangular"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock 1"; Value = "51"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Newark"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "69AC5942"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Termination"; Value = "Solder"; VariantName = "[No Variations]"
+Added Component: Designator=MK4(ICS-40730)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "https://www.invensense.com/wp-content/uploads/2017/01/ICS-40730-Datasheet.pdf?src-supplier=Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://www.invensense.com/wp-content/uploads/2017/01/ICS-40730-Datasheet.pdf?src-supplier=Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "http://www.invensense.com/wp-content/uploads/2018/12/DS-000139-ICS-40730-v1.0.pdf?src-supplier=Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://www.invensense.com/wp-content/uploads/2018/12/DS-000139-ICS-40730-v1.0.pdf?src-supplier=Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Impedance"; Value = "750R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "TDK InvenSense"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "ICS-40730"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Supply Current"; Value = "285uA"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Output Type"; Value = "Analog"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Cut Tape"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "1=3.61000, 10=2.99000, 25=2.76000, 50=2.59000, 100=2.43000 (USD)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS Compliant"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Shape"; Value = "Rectangular"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock 1"; Value = "51"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Newark"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "69AC5942"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Termination"; Value = "Solder"; VariantName = "[No Variations]"
+Added Component: Designator=MK5(ICS-40730)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "https://www.invensense.com/wp-content/uploads/2017/01/ICS-40730-Datasheet.pdf?src-supplier=Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://www.invensense.com/wp-content/uploads/2017/01/ICS-40730-Datasheet.pdf?src-supplier=Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "http://www.invensense.com/wp-content/uploads/2018/12/DS-000139-ICS-40730-v1.0.pdf?src-supplier=Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://www.invensense.com/wp-content/uploads/2018/12/DS-000139-ICS-40730-v1.0.pdf?src-supplier=Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Impedance"; Value = "750R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "TDK InvenSense"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "ICS-40730"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Supply Current"; Value = "285uA"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Output Type"; Value = "Analog"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Cut Tape"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "1=3.61000, 10=2.99000, 25=2.76000, 50=2.59000, 100=2.43000 (USD)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS Compliant"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Shape"; Value = "Rectangular"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock 1"; Value = "51"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Newark"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "69AC5942"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Termination"; Value = "Solder"; VariantName = "[No Variations]"
+Added Component: Designator=MK6(ICS-40730)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "https://www.invensense.com/wp-content/uploads/2017/01/ICS-40730-Datasheet.pdf?src-supplier=Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://www.invensense.com/wp-content/uploads/2017/01/ICS-40730-Datasheet.pdf?src-supplier=Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "http://www.invensense.com/wp-content/uploads/2018/12/DS-000139-ICS-40730-v1.0.pdf?src-supplier=Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://www.invensense.com/wp-content/uploads/2018/12/DS-000139-ICS-40730-v1.0.pdf?src-supplier=Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Impedance"; Value = "750R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "TDK InvenSense"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "ICS-40730"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Supply Current"; Value = "285uA"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Output Type"; Value = "Analog"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Cut Tape"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "1=3.61000, 10=2.99000, 25=2.76000, 50=2.59000, 100=2.43000 (USD)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS Compliant"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Shape"; Value = "Rectangular"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock 1"; Value = "51"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Newark"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "69AC5942"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Termination"; Value = "Solder"; VariantName = "[No Variations]"
+Added Component: Designator=MK7(ICS-40730)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "https://www.invensense.com/wp-content/uploads/2017/01/ICS-40730-Datasheet.pdf?src-supplier=Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://www.invensense.com/wp-content/uploads/2017/01/ICS-40730-Datasheet.pdf?src-supplier=Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "http://www.invensense.com/wp-content/uploads/2018/12/DS-000139-ICS-40730-v1.0.pdf?src-supplier=Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://www.invensense.com/wp-content/uploads/2018/12/DS-000139-ICS-40730-v1.0.pdf?src-supplier=Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Impedance"; Value = "750R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "TDK InvenSense"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "ICS-40730"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Supply Current"; Value = "285uA"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Output Type"; Value = "Analog"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Cut Tape"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "1=3.61000, 10=2.99000, 25=2.76000, 50=2.59000, 100=2.43000 (USD)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS Compliant"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Shape"; Value = "Rectangular"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock 1"; Value = "51"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Newark"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "69AC5942"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Termination"; Value = "Solder"; VariantName = "[No Variations]"
+Added Component: Designator=MK8(ICS-40730)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "https://www.invensense.com/wp-content/uploads/2017/01/ICS-40730-Datasheet.pdf?src-supplier=Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://www.invensense.com/wp-content/uploads/2017/01/ICS-40730-Datasheet.pdf?src-supplier=Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "http://www.invensense.com/wp-content/uploads/2018/12/DS-000139-ICS-40730-v1.0.pdf?src-supplier=Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://www.invensense.com/wp-content/uploads/2018/12/DS-000139-ICS-40730-v1.0.pdf?src-supplier=Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Impedance"; Value = "750R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "TDK InvenSense"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "ICS-40730"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Supply Current"; Value = "285uA"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Output Type"; Value = "Analog"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Cut Tape"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "1=3.61000, 10=2.99000, 25=2.76000, 50=2.59000, 100=2.43000 (USD)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS Compliant"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Shape"; Value = "Rectangular"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock 1"; Value = "51"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Newark"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "69AC5942"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Termination"; Value = "Solder"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=3V3 Pin=MK2-1
+Added Pin To Net: NetName=MIC_OUTS.OUT2_N Pin=MK2-2
+Added Pin To Net: NetName=MIC_OUTS.OUT2_P Pin=MK2-3
+Added Pin To Net: NetName=GND Pin=MK2-4
+Added Pin To Net: NetName=3V3 Pin=MK3-1
+Added Pin To Net: NetName=MIC_OUTS.OUT3_N Pin=MK3-2
+Added Pin To Net: NetName=MIC_OUTS.OUT3_P Pin=MK3-3
+Added Pin To Net: NetName=GND Pin=MK3-4
+Added Pin To Net: NetName=3V3 Pin=MK4-1
+Added Pin To Net: NetName=MIC_OUTS.OUT4_N Pin=MK4-2
+Added Pin To Net: NetName=MIC_OUTS.OUT4_P Pin=MK4-3
+Added Pin To Net: NetName=GND Pin=MK4-4
+Added Pin To Net: NetName=3V3 Pin=MK5-1
+Added Pin To Net: NetName=MIC_OUTS.OUT5_N Pin=MK5-2
+Added Pin To Net: NetName=MIC_OUTS.OUT5_P Pin=MK5-3
+Added Pin To Net: NetName=GND Pin=MK5-4
+Added Pin To Net: NetName=3V3 Pin=MK6-1
+Added Pin To Net: NetName=MIC_OUTS.OUT6_N Pin=MK6-2
+Added Pin To Net: NetName=MIC_OUTS.OUT6_P Pin=MK6-3
+Added Pin To Net: NetName=GND Pin=MK6-4
+Added Pin To Net: NetName=3V3 Pin=MK7-1
+Added Pin To Net: NetName=MIC_OUTS.OUT7_N Pin=MK7-2
+Added Pin To Net: NetName=MIC_OUTS.OUT7_P Pin=MK7-3
+Added Pin To Net: NetName=GND Pin=MK7-4
+Added Pin To Net: NetName=3V3 Pin=MK8-1
+Added Pin To Net: NetName=MIC_OUTS.OUT8_N Pin=MK8-2
+Added Pin To Net: NetName=MIC_OUTS.OUT8_P Pin=MK8-3
+Added Pin To Net: NetName=GND Pin=MK8-4
+Added Member To Class: ClassName=U_Sensor_Sheet Member=Component MK2 ICS-40730
+Added Member To Class: ClassName=U_Sensor_Sheet Member=Component MK3 ICS-40730
+Added Member To Class: ClassName=U_Sensor_Sheet Member=Component MK4 ICS-40730
+Added Member To Class: ClassName=U_Sensor_Sheet Member=Component MK5 ICS-40730
+Added Member To Class: ClassName=U_Sensor_Sheet Member=Component MK6 ICS-40730
+Added Member To Class: ClassName=U_Sensor_Sheet Member=Component MK7 ICS-40730
+Added Member To Class: ClassName=U_Sensor_Sheet Member=Component MK8 ICS-40730
