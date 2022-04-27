@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------------------------------------------------------------------
-NCDrill File Report For: Sound_Sensor.PcbDoc   4/15/2022  2:42:34 PM
+NCDrill File Report For: Sound_Sensor.PcbDoc   4/28/2022  1:38:24 AM
 ----------------------------------------------------------------------------------------------------------------------------------
 
 Layer Pair : Top Layer to Bottom Layer
@@ -8,14 +8,13 @@ ASCII SlotHoles File : Sound_Sensor-SlotHoles.TXT
 
 Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
 ----------------------------------------------------------------------------------------------------------------------------------
-T1      12mil (0.3mm)                                             Round             221       PTH        36.72inch (932.61mm)
-T2      20mil (0.5mm)                                             Slot              2         PTH        0.60inch (15.33mm)
-T3      22mil (0.55mm)                                            Slot              2         PTH        0.41inch (10.30mm)
-T4      35mil (0.9mm)                                             Round             5         PTH        0.40inch (10.16mm)
-T5      39mil (0.991mm)                                           Round             2         PTH        0.10inch (2.54mm)
-T6      91mil (2.3mm)                                             Round             8         PTH        9.64inch (244.92mm)
-T7      118mil (3mm)                                              Round             4         PTH        7.06inch (179.40mm)
+T1      12mil (0.3mm)                                             Round             242       PTH        40.36inch (1025.21mm)
+T2      20mil (0.5mm)                                             Slot              4         PTH        1.41inch (35.93mm)
+T3      35mil (0.9mm)                                             Round             11        PTH        1.01inch (25.73mm)
+T4      39mil (0.991mm)                                           Round             2         PTH        0.10inch (2.54mm)
+T5      91mil (2.3mm)                                             Round             8         PTH        9.64inch (244.89mm)
+T6      118mil (3mm)                                              Round             4         PTH        7.06inch (179.40mm)
 ----------------------------------------------------------------------------------------------------------------------------------
-Totals                                                                              244
+Totals                                                                              271
 
 Total Processing Time (hh:mm:ss) : 00:00:00
