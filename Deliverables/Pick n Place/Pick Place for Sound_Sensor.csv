@@ -4,9 +4,9 @@ C:\Users\XPENDER\Documents\GitHub\Melih-SoundSensor\Design-Files\Project Outputs
 ========================================================================================================================
 File Design Information:
 
-Date:       28/04/22
-Time:       01:39
-Revision:   630baca0799f38eb7007fa19c82fbd2ea4755a23
+Date:       30/04/22
+Time:       22:32
+Revision:   6e15845a35f5a2b1aa425e91500a9753c926f134
 Variant:    No variations
 Units used: mil
 
@@ -69,9 +69,9 @@ Units used: mil
 "C75","BottomLayer","1141,000mil","2634,000mil","90","1141,000mil","2634,000mil","1141,000mil","2604,000mil"
 "SB5","BottomLayer","990,000mil","2450,000mil","180","990,000mil","2450,000mil","1020,000mil","2450,000mil"
 "SB4","BottomLayer","1519,000mil","2234,333mil","180","1519,000mil","2234,333mil","1549,000mil","2234,333mil"
-"R5","TopLayer","1391,000mil","2602,500mil","270","1391,000mil","2602,500mil","1391,000mil","2632,500mil"
-"C84","TopLayer","1439,000mil","2602,500mil","270","1439,000mil","2602,500mil","1439,000mil","2632,500mil"
-"C83","TopLayer","1347,000mil","2592,500mil","90","1347,000mil","2592,500mil","1347,000mil","2574,000mil"
+"R5","TopLayer","1391,000mil","2599,500mil","270","1391,000mil","2599,500mil","1391,000mil","2629,500mil"
+"C84","TopLayer","1439,000mil","2599,500mil","270","1439,000mil","2599,500mil","1439,000mil","2629,500mil"
+"C83","TopLayer","1347,000mil","2589,500mil","90","1347,000mil","2589,500mil","1347,000mil","2571,000mil"
 "SB8","TopLayer","1377,692mil","1598,062mil","180","1377,692mil","1598,062mil","1407,692mil","1598,062mil"
 "C5","BottomLayer","1738,692mil","2398,062mil","0","1738,692mil","2398,062mil","1708,692mil","2398,062mil"
 "C6","BottomLayer","1724,692mil","2353,062mil","0","1724,692mil","2353,062mil","1706,192mil","2353,062mil"
