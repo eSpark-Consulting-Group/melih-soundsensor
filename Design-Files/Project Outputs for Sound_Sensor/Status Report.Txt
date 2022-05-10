@@ -1,13 +1,11 @@
-Output: NC Drill Files
-Type  : NC Drill
-From  : Project [Sound_Sensor.PrjPcb]
-   Generated File[Sound_Sensor-RoundHoles.TXT]
-   Generated File[Sound_Sensor-SlotHoles.TXT]
-   Generated File[Sound_Sensor.LDP]
-   Generated File[Sound_Sensor.DRR]
+Output: Generates pick and place files
+Type  : Pick Place
+From  : Variant [[No Variations]] of Project [Sound_Sensor.PrjPcb]
+   Generated File[Pick Place for Sound_Sensor.txt]
+   Generated File[Pick Place for Sound_Sensor.csv]
 
 
-Files Generated   : 4
+Files Generated   : 2
 Documents Printed : 0
 
-Finished Output Generation At 10:33:39 PM On 4/30/2022
+Finished Output Generation At 11:27:27 AM On 5/10/2022

@@ -1,16 +1,18 @@
 Altium Designer Pick and Place Locations
-C:\Users\XPENDER\Documents\GitHub\Melih-SoundSensor\Design-Files\Project Outputs for Sound_Sensor\Pick Place for Sound_Sensor.txt
+E:\Melih-SoundSensor\Design-Files\Project Outputs for Sound_Sensor\Pick Place for Sound_Sensor.txt
 
 ========================================================================================================================
 File Design Information:
 
-Date:       30/04/22
-Time:       22:32
-Revision:   6e15845a35f5a2b1aa425e91500a9753c926f134
+Date:       10/05/22
+Time:       11:27
+Revision:   18c95aad8cbaa3c19da348f3235d5c6089afb187
 Variant:    No variations
 Units used: mil
 
 Designator Layer       Center-X(mil) Center-Y(mil) Rotation Ref-X(mil)  Ref-Y(mil)  Pad-X(mil)  Pad-Y(mil)  
+J1         TopLayer    2817,000mil   1430,000mil   270      2817,000mil 1630,000mil 2817,000mil 1630,000mil 
+J2         TopLayer    -371,000mil   1150,000mil   270      -371,000mil 1150,000mil -287,339mil 1258,268mil 
 U10        TopLayer    1375,299mil   2073,696mil   0        1375,299mil 2073,696mil 1269,000mil 2148,696mil 
 U8         TopLayer    1051,000mil   2072,000mil   0        1051,000mil 2072,000mil 942,732mil  2147,000mil 
 R10        BottomLayer 1280,000mil   2140,000mil   180      1280,000mil 2140,000mil 1310,000mil 2140,000mil 
@@ -136,7 +138,6 @@ R17        BottomLayer 416,692mil    2598,062mil   0        416,692mil  2598,062
 R2         TopLayer    1234,905mil   1683,275mil   180      1234,905mil 1683,275mil 1264,905mil 1683,275mil 
 R1         TopLayer    1375,692mil   1705,062mil   180      1375,692mil 1705,062mil 1405,692mil 1705,062mil 
 J3         TopLayer    1206,692mil   -542,938mil   0        1156,692mil -542,938mil 1156,692mil -542,938mil 
-J2         TopLayer    -371,339mil   1150,079mil   270      -287,677mil 1258,346mil -287,677mil 1130,394mil 
 C74        TopLayer    1585,692mil   493,062mil    90       1585,692mil 493,062mil  1585,692mil 463,062mil  
 C73        TopLayer    1360,692mil   488,062mil    270      1360,692mil 488,062mil  1360,692mil 518,062mil  
 C72        BottomLayer 1726,692mil   633,062mil    90       1726,692mil 633,062mil  1726,692mil 603,062mil  
@@ -200,7 +201,6 @@ C7         BottomLayer 2402,192mil   1744,062mil   180      2402,192mil 1744,062
 C3         BottomLayer 572,692mil    2414,062mil   180      572,692mil  2414,062mil 602,692mil  2414,062mil 
 C2         TopLayer    1123,692mil   129,062mil    180      1123,692mil 129,062mil  1153,692mil 129,062mil  
 C1         TopLayer    1092,692mil   3,062mil      90       1092,692mil 3,062mil    1092,692mil -26,938mil  
-J1         TopLayer    2817,000mil   1430,000mil   270      2817,000mil 1630,000mil 2817,000mil 1630,000mil 
 C18        BottomLayer -167,808mil   1539,062mil   180      -167,808mil 1539,062mil -149,308mil 1539,062mil 
 C16        BottomLayer -140,808mil   420,062mil    180      -140,808mil 420,062mil  -122,308mil 420,062mil  
 C14        BottomLayer 676,692mil    -70,938mil    180      676,692mil  -70,938mil  695,192mil  -70,938mil  
