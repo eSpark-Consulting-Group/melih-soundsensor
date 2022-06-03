@@ -4,15 +4,16 @@ E:\Melih-SoundSensor\Design-Files\Project Outputs for Sound_Sensor\Pick Place fo
 ========================================================================================================================
 File Design Information:
 
-Date:       10/05/22
-Time:       11:27
-Revision:   18c95aad8cbaa3c19da348f3235d5c6089afb187
+Date:       03/06/22
+Time:       19:28
+Revision:   c7be9cc1b091855642a3a8df505e5fa97475241a
 Variant:    No variations
 Units used: mil
 
 "Designator","Layer","Center-X(mil)","Center-Y(mil)","Rotation","Ref-X(mil)","Ref-Y(mil)","Pad-X(mil)","Pad-Y(mil)"
+"C87","BottomLayer","1341,500mil","1495,000mil","180","1341,500mil","1495,000mil","1371,500mil","1495,000mil"
 "J1","TopLayer","2817,000mil","1430,000mil","270","2817,000mil","1630,000mil","2817,000mil","1630,000mil"
-"J2","TopLayer","-371,000mil","1150,000mil","270","-371,000mil","1150,000mil","-287,339mil","1258,268mil"
+"J2","TopLayer","-371,000mil","1150,000mil","270","-371,000mil","1150,000mil","-287,339mil","1130,315mil"
 "U10","TopLayer","1375,299mil","2073,696mil","0","1375,299mil","2073,696mil","1269,000mil","2148,696mil"
 "U8","TopLayer","1051,000mil","2072,000mil","0","1051,000mil","2072,000mil","942,732mil","2147,000mil"
 "R10","BottomLayer","1280,000mil","2140,000mil","180","1280,000mil","2140,000mil","1310,000mil","2140,000mil"
@@ -94,7 +95,6 @@ Units used: mil
 "U2","TopLayer","1084,692mil","-182,938mil","180","1084,692mil","-182,938mil","1127,999mil","-208,528mil"
 "U1","TopLayer","1289,692mil","-183,674mil","0","1289,692mil","-183,674mil","1246,385mil","-158,083mil"
 "SW1","TopLayer","342,692mil","2600,062mil","210","342,692mil","2600,062mil","291,822mil","2536,597mil"
-"C87","BottomLayer","1323,000mil","1493,000mil","180","1323,000mil","1493,000mil","1341,500mil","1493,000mil"
 "SB48","TopLayer","2293,692mil","858,062mil","270","2293,692mil","858,062mil","2293,692mil","888,062mil"
 "SB47","TopLayer","2355,692mil","792,062mil","270","2355,692mil","792,062mil","2355,692mil","822,062mil"
 "SB46","TopLayer","2355,692mil","676,062mil","90","2355,692mil","676,062mil","2355,692mil","646,062mil"
