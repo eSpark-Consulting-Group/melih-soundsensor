@@ -1,16 +1,18 @@
 Altium Designer Pick and Place Locations
-E:\Melih-SoundSensor\Design-Files\Project Outputs for Sound_Sensor\Pick Place for Sound_Sensor.csv
+E:\Melih-SoundSensor\Design-Files\Pick Place for Sound_Sensor.csv
 
 ========================================================================================================================
 File Design Information:
 
-Date:       03/06/22
-Time:       19:28
-Revision:   c7be9cc1b091855642a3a8df505e5fa97475241a
+Date:       09/06/22
+Time:       17:10
+Revision:   Not in VersionControl
 Variant:    No variations
 Units used: mil
 
 "Designator","Layer","Center-X(mil)","Center-Y(mil)","Rotation","Ref-X(mil)","Ref-Y(mil)","Pad-X(mil)","Pad-Y(mil)"
+"X3","TopLayer","1482,000mil","492,000mil","0","1482,000mil","492,000mil","1438,693mil","458,536mil"
+"X2","TopLayer","255,000mil","490,000mil","180","255,000mil","490,000mil","298,307mil","523,465mil"
 "C87","BottomLayer","1341,500mil","1495,000mil","180","1341,500mil","1495,000mil","1371,500mil","1495,000mil"
 "J1","TopLayer","2817,000mil","1430,000mil","270","2817,000mil","1630,000mil","2817,000mil","1630,000mil"
 "J2","TopLayer","-371,000mil","1150,000mil","270","-371,000mil","1150,000mil","-287,339mil","1130,315mil"
@@ -84,8 +86,6 @@ Units used: mil
 "R3","TopLayer","1375,692mil","1756,062mil","180","1375,692mil","1756,062mil","1405,692mil","1756,062mil"
 "C#2","TopLayer","1260,692mil","-102,938mil","0","1260,692mil","-102,938mil","1230,692mil","-102,938mil"
 "C#1","TopLayer","1111,692mil","-263,938mil","180","1111,692mil","-263,938mil","1141,692mil","-263,938mil"
-"X3","TopLayer","1477,385mil","489,598mil","0","1477,385mil","489,598mil","1434,078mil","456,133mil"
-"X2","TopLayer","255,999mil","489,527mil","180","255,999mil","489,527mil","299,306mil","522,991mil"
 "X1","TopLayer","1203,692mil","1790,062mil","180","1203,692mil","1790,062mil","1246,999mil","1823,527mil"
 "U13","TopLayer","957,702mil","2333,142mil","180","957,702mil","2333,142mil","995,891mil","2307,552mil"
 "U6","TopLayer","1833,692mil","564,062mil","0","1833,692mil","564,062mil","1719,519mil","701,858mil"

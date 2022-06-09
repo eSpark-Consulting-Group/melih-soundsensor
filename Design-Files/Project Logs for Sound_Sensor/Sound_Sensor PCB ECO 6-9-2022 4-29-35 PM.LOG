@@ -1,0 +1,22 @@
+Added Component: Designator=X2(S3224576121060)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "LCSC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://lcsc.com/product-detail/Crystals_JGHC-S3224576121060_C390772.html"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "JGHC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "S3224576121060"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "24.576MHz"; VariantName = "[No Variations]"
+Added Component: Designator=X3(S3224576121060)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "LCSC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://lcsc.com/product-detail/Crystals_JGHC-S3224576121060_C390772.html"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "JGHC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "S3224576121060"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "24.576MHz"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetC61_2 Pin=X2-1
+Added Pin To Net: NetName=GND Pin=X2-2
+Added Pin To Net: NetName=XO_A# Pin=X2-3
+Added Pin To Net: NetName=GND Pin=X2-4
+Added Pin To Net: NetName=NetC73_2 Pin=X3-1
+Added Pin To Net: NetName=GND Pin=X3-2
+Added Pin To Net: NetName=XO_B# Pin=X3-3
+Added Pin To Net: NetName=GND Pin=X3-4
+Added Member To Class: ClassName=U_ADC_2_Section Member=Component X2 S3224576121060
+Added Member To Class: ClassName=U_ADC_2_Section Member=Component X3 S3224576121060

@@ -9,7 +9,7 @@ Generating : Mechanical 2
 
 
 Used DCodes :
-    D10
+    D11
 *************************************************************
 
 *************************************************************
@@ -37,8 +37,8 @@ Generating : Bottom Paste
 
 
 Used DCodes :
-    D21
-    D23
+    D22
+    D24
     D26
     D27
     D166
@@ -60,9 +60,9 @@ Generating : Bottom Solder
 
 
 Used DCodes :
-    D45
-    D47
+    D46
     D48
+    D49
     D51
     D52
     D58
@@ -236,8 +236,8 @@ Generating : Bottom Pad Master
 
 
 Used DCodes :
-    D21
-    D23
+    D22
+    D24
     D26
     D27
     D157
@@ -267,8 +267,8 @@ Generating : Bottom Layer
 Used DCodes :
     D10
     D11
-    D21
-    D23
+    D22
+    D24
     D26
     D27
     D73

@@ -1,0 +1,11 @@
+Output: Generates pick and place files
+Type  : Pick Place
+From  : Variant [[No Variations]] of Project [Free Documents]
+   Generated File[Pick Place for Sound_Sensor.txt]
+   Generated File[Pick Place for Sound_Sensor.csv]
+
+
+Files Generated   : 2
+Documents Printed : 0
+
+Finished Output Generation At 5:10:27 PM On 6/9/2022
