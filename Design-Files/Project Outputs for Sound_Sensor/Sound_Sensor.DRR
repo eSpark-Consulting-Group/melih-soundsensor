@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------------------------------------------------------------------
-NCDrill File Report For: Sound_Sensor.PcbDoc   6/9/2022  5:03:18 PM
+NCDrill File Report For: Sound_Sensor.PcbDoc   7/14/2022  3:05:46 PM
 ----------------------------------------------------------------------------------------------------------------------------------
 
 Layer Pair : Top Layer to Bottom Layer
@@ -8,7 +8,7 @@ ASCII SlotHoles File : Sound_Sensor-SlotHoles.TXT
 
 Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
 ----------------------------------------------------------------------------------------------------------------------------------
-T1      12mil (0.3mm)                                             Round             244       PTH        40.38inch (1025.58mm)
+T1      12mil (0.3mm)                                             Round             246       PTH        41.57inch (1056.00mm)
 T2      20mil (0.5mm)                                             Slot              4         PTH        1.41inch (35.93mm)
 T3      35mil (0.9mm)                                             Round             6         PTH        0.50inch (12.70mm)
 T4      37mil (0.95mm)                                            Round             5         PTH        0.40inch (10.16mm)
@@ -16,6 +16,6 @@ T5      39mil (0.991mm)                                           Round         
 T6      91mil (2.3mm)                                             Round             8         PTH        9.64inch (244.89mm)
 T7      118mil (3mm)                                              Round             4         PTH        7.06inch (179.40mm)
 ----------------------------------------------------------------------------------------------------------------------------------
-Totals                                                                              273
+Totals                                                                              275
 
 Total Processing Time (hh:mm:ss) : 00:00:00

@@ -31,7 +31,7 @@ ReportSuppressedErrorsInMessages=0
 FSMCodingStyle=eFMSDropDownList_OneProcess
 FSMEncodingStyle=eFMSDropDownList_OneHot
 IsProjectConflictPreventionWarningsEnabled=1
-OutputPath=
+OutputPath=Project Outputs for Sound_Sensor
 LogFolderPath=
 ManagedProjectGUID=
 IncludeDesignInRelease=0
@@ -336,7 +336,7 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document18]
-DocumentPath=..\Deliverables\Gerber Files\NC_Drill_Fles.Cam
+DocumentPath=..\Deliverables\Gerber Files\NC_Drill_Files.Cam
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -353,82 +353,86 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [GeneratedDocument1]
-DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor-RoundHoles.TXT
+DocumentPath=Project Outputs for Sound_Sensor\Design Rule Check - Sound_Sensor.html
 DItemRevisionGUID=
 
 [GeneratedDocument2]
-DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor-SlotHoles.TXT
+DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor-RoundHoles.TXT
 DItemRevisionGUID=
 
 [GeneratedDocument3]
-DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.DRR
+DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor-SlotHoles.TXT
 DItemRevisionGUID=
 
 [GeneratedDocument4]
-DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.EXTREP
+DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.DRR
 DItemRevisionGUID=
 
 [GeneratedDocument5]
-DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.GBL
+DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.EXTREP
 DItemRevisionGUID=
 
 [GeneratedDocument6]
-DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.GBO
+DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.GBL
 DItemRevisionGUID=
 
 [GeneratedDocument7]
-DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.GBP
+DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.GBO
 DItemRevisionGUID=
 
 [GeneratedDocument8]
-DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.GBS
+DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.GBP
 DItemRevisionGUID=
 
 [GeneratedDocument9]
-DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.GD1
+DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.GBS
 DItemRevisionGUID=
 
 [GeneratedDocument10]
-DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.GG1
+DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.GD1
 DItemRevisionGUID=
 
 [GeneratedDocument11]
-DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.GM2
+DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.GG1
 DItemRevisionGUID=
 
 [GeneratedDocument12]
-DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.GPB
+DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.GM2
 DItemRevisionGUID=
 
 [GeneratedDocument13]
-DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.GPT
+DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.GPB
 DItemRevisionGUID=
 
 [GeneratedDocument14]
-DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.GTL
+DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.GPT
 DItemRevisionGUID=
 
 [GeneratedDocument15]
-DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.GTO
+DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.GTL
 DItemRevisionGUID=
 
 [GeneratedDocument16]
-DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.GTP
+DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.GTO
 DItemRevisionGUID=
 
 [GeneratedDocument17]
-DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.GTS
+DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.GTP
 DItemRevisionGUID=
 
 [GeneratedDocument18]
-DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.LDP
+DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.GTS
 DItemRevisionGUID=
 
 [GeneratedDocument19]
-DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.REP
+DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.LDP
 DItemRevisionGUID=
 
 [GeneratedDocument20]
+DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.REP
+DItemRevisionGUID=
+
+[GeneratedDocument21]
 DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.RUL
 DItemRevisionGUID=
 
@@ -599,7 +603,7 @@ TerminationPrefC7=0
 TerminationVCC7=5
 
 [Generic_EDE]
-OutputDir=
+OutputDir=Project Outputs for Sound_Sensor
 
 [OutputGroup1]
 Name=Netlist Outputs
@@ -706,12 +710,42 @@ OutputName20=WireList Netlist
 OutputDocumentPath20=
 OutputVariantName20=
 OutputDefault20=0
+OutputType21=SIMetrixNetlist
+OutputName21=SIMetrix
+OutputDocumentPath21=
+OutputVariantName21=
+OutputDefault21=0
+OutputType22=SIMPLISNetlist
+OutputName22=SIMPLIS
+OutputDocumentPath22=
+OutputVariantName22=
+OutputDefault22=0
+OutputType23=XSpiceNetlist
+OutputName23=Mixed Sim Netlist
+OutputDocumentPath23=
+OutputVariantName23=
+OutputDefault23=0
 
 [OutputGroup2]
 Name=Simulator Outputs
 Description=
 TargetPrinter=Microsoft Print to PDF
 PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
+OutputType1=AdvSimNetlist
+OutputName1=Mixed Sim
+OutputDocumentPath1=
+OutputVariantName1=
+OutputDefault1=0
+OutputType2=SIMetrixSimulation
+OutputName2=SIMetrix
+OutputDocumentPath2=
+OutputVariantName2=
+OutputDefault2=0
+OutputType3=SIMPLISSimulation
+OutputName3=SIMPLIS
+OutputDocumentPath3=
+OutputVariantName3=
+OutputDefault3=0
 
 [OutputGroup3]
 Name=Documentation Outputs
