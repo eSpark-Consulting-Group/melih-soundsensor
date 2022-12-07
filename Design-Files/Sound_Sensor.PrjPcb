@@ -31,7 +31,7 @@ ReportSuppressedErrorsInMessages=0
 FSMCodingStyle=eFMSDropDownList_OneProcess
 FSMEncodingStyle=eFMSDropDownList_OneHot
 IsProjectConflictPreventionWarningsEnabled=1
-OutputPath=Project Outputs for Sound_Sensor
+OutputPath=
 LogFolderPath=
 ManagedProjectGUID=
 IncludeDesignInRelease=0
@@ -115,40 +115,6 @@ GenerateClassCluster=0
 DocumentUniqueId=CPIJKQOV
 
 [Document5]
-DocumentPath=Memory_Section.SchDoc
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=7
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=XOLDFNIZ
-
-[Document6]
-DocumentPath=Power_Section.Harness
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=
-
-[Document7]
 DocumentPath=ADC_1_Section.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -165,7 +131,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=MTCNBXOA
 
-[Document8]
+[Document6]
 DocumentPath=Sound_Sensor.PcbDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -182,7 +148,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=CNMGRELL
 
-[Document9]
+[Document7]
 DocumentPath=ADC_2_Section.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -199,7 +165,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=IOOGWGWK
 
-[Document10]
+[Document8]
 DocumentPath=Connector_Sheet.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -216,7 +182,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=WMYPHGBN
 
-[Document11]
+[Document9]
 DocumentPath=Sensor_Sheet.Harness
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -233,7 +199,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document12]
+[Document10]
 DocumentPath=ADC_1_Section.Harness
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -250,7 +216,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document13]
+[Document11]
 DocumentPath=ADC_2_Section.Harness
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -267,7 +233,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document14]
+[Document12]
 DocumentPath=Connector_Sheet.Harness
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -284,24 +250,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document15]
-DocumentPath=Memory_Section.Harness
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=
-
-[Document16]
+[Document13]
 DocumentPath=Controller_Sheet.Harness
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -318,7 +267,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document17]
+[Document14]
 DocumentPath=..\Deliverables\Gerber Files\Gerber_Files.Cam
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -335,7 +284,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document18]
+[Document15]
 DocumentPath=..\Deliverables\Gerber Files\NC_Drill_Files.Cam
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -599,7 +548,7 @@ TerminationPrefC7=0
 TerminationVCC7=5
 
 [Generic_EDE]
-OutputDir=Project Outputs for Sound_Sensor
+OutputDir=
 
 [OutputGroup1]
 Name=Netlist Outputs
