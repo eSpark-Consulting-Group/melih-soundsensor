@@ -1,32 +1,32 @@
 Board Information Report
 Filename     : E:\Melih-SoundSensor\Design-Files\Sound_Sensor.PcbDoc
-Date         : 12/9/2022
-Time         : 6:32:17 PM
+Date         : 12/12/2022
+Time         : 6:34:20 PM
 Time Elapsed : 00:00:00
 
 General
-    Board Size, 3543.307milsx3543.307mils
+    Board Size, 90mmx90mm
     Components on board, 163
 count : 2
 
 Routing Information
-    Routing completion, 68.23%
+    Routing completion, 84.53%
     Connections, 362
-    Connections routed, 247
-    Connections remaining, 115
+    Connections routed, 306
+    Connections remaining, 56
 count : 4
 
 Layer, Arcs, Pads, Vias, Tracks, Texts, Fills, Regions, ComponentBodies
-    Top Layer, 1, 370, 0, 607, 0, 35, 0, 0
-    Bottom Layer, 0, 126, 0, 249, 0, 32, 0, 0
+    Top Layer, 0, 370, 0, 808, 0, 39, 0, 0
+    Bottom Layer, 0, 126, 0, 406, 0, 38, 0, 0
     Mechanical 1, 0, 0, 0, 0, 0, 0, 0, 107
     Mechanical 2, 1, 0, 0, 1, 0, 0, 0, 0
-    Multi-Layer, 0, 27, 122, 0, 0, 0, 1, 0
+    Multi-Layer, 0, 27, 157, 0, 0, 0, 1, 0
     Top Paste, 0, 0, 0, 0, 0, 0, 0, 0
     Top Overlay, 11, 0, 0, 489, 225, 1, 0, 0
     Top Solder, 0, 0, 0, 0, 0, 0, 0, 0
     Bottom Solder, 0, 0, 0, 0, 0, 0, 0, 0
-    Bottom Overlay, 0, 0, 0, 3426, 154, 0, 0, 0
+    Bottom Overlay, 0, 0, 0, 3425, 154, 0, 0, 0
     Bottom Paste, 0, 0, 0, 0, 0, 0, 0, 0
     Drill Guide, 0, 0, 0, 0, 0, 0, 0, 0
     Keep-Out Layer, 0, 0, 0, 0, 0, 0, 1, 0
