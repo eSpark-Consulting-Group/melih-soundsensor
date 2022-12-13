@@ -1,27 +1,27 @@
 Board Information Report
 Filename     : E:\Melih-SoundSensor\Design-Files\Sound_Sensor.PcbDoc
-Date         : 12/12/2022
-Time         : 6:34:20 PM
+Date         : 12/13/2022
+Time         : 10:25:31 AM
 Time Elapsed : 00:00:00
 
 General
-    Board Size, 90mmx90mm
+    Board Size, 3543.307milsx3543.307mils
     Components on board, 163
 count : 2
 
 Routing Information
-    Routing completion, 84.53%
+    Routing completion, 86.46%
     Connections, 362
-    Connections routed, 306
-    Connections remaining, 56
+    Connections routed, 313
+    Connections remaining, 49
 count : 4
 
 Layer, Arcs, Pads, Vias, Tracks, Texts, Fills, Regions, ComponentBodies
-    Top Layer, 0, 370, 0, 808, 0, 39, 0, 0
-    Bottom Layer, 0, 126, 0, 406, 0, 38, 0, 0
+    Top Layer, 0, 370, 0, 837, 0, 40, 0, 0
+    Bottom Layer, 0, 126, 0, 481, 0, 41, 0, 0
     Mechanical 1, 0, 0, 0, 0, 0, 0, 0, 107
     Mechanical 2, 1, 0, 0, 1, 0, 0, 0, 0
-    Multi-Layer, 0, 27, 157, 0, 0, 0, 1, 0
+    Multi-Layer, 0, 27, 166, 0, 0, 0, 1, 0
     Top Paste, 0, 0, 0, 0, 0, 0, 0, 0
     Top Overlay, 11, 0, 0, 489, 225, 1, 0, 0
     Top Solder, 0, 0, 0, 0, 0, 0, 0, 0
