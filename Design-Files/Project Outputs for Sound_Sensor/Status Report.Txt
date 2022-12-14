@@ -1,13 +1,25 @@
-Output: NC Drill Files
-Type  : NC Drill
-From  : Project [Sound_Sensor.PrjPcb]
-   Generated File[Sound_Sensor-RoundHoles.TXT]
-   Generated File[Sound_Sensor-SlotHoles.TXT]
-   Generated File[Sound_Sensor.LDP]
-   Generated File[Sound_Sensor.DRR]
+Output: Gerber Files
+Type  : Gerber
+From  : Variant [[No Variations]] of Project [Sound_Sensor.PrjPcb]
+   Generated File[Sound_Sensor.GTO]
+   Generated File[Sound_Sensor.GTP]
+   Generated File[Sound_Sensor.GTS]
+   Generated File[Sound_Sensor.GTL]
+   Generated File[Sound_Sensor.GBL]
+   Generated File[Sound_Sensor.GBS]
+   Generated File[Sound_Sensor.GBP]
+   Generated File[Sound_Sensor.GBO]
+   Generated File[Sound_Sensor.GM2]
+   Generated File[Sound_Sensor.GPT]
+   Generated File[Sound_Sensor.GPB]
+   Generated File[Sound_Sensor.GD1]
+   Generated File[Sound_Sensor.GG1]
+   Generated File[Sound_Sensor.RUL]
+   Generated File[Sound_Sensor.EXTREP]
+   Generated File[Sound_Sensor.REP]
 
 
-Files Generated   : 4
+Files Generated   : 16
 Documents Printed : 0
 
-Finished Output Generation At 3:05:46 PM On 7/14/2022
+Finished Output Generation At 8:22:30 PM On 12/14/2022
