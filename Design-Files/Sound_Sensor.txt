@@ -1,37 +1,38 @@
 Board Information Report
-Filename     : C:\Users\LiberDB\Documents\GitHub\Melih-SoundSensor\Design-Files\Sound_Sensor.PcbDoc
-Date         : 12/13/2022
-Time         : 8:18:20 PM
+Filename     : E:\Melih-SoundSensor\Design-Files\Sound_Sensor.PcbDoc
+Date         : 12/23/2022
+Time         : 5:29:35 PM
 Time Elapsed : 00:00:00
 
 General
     Board Size, 3543.307milsx3543.307mils
-    Components on board, 163
+    Components on board, 327
 count : 2
 
 Routing Information
-    Routing completion, 100.00%
-    Connections, 362
+    Routing completion, 52.39%
+    Connections, 691
     Connections routed, 362
-    Connections remaining, 0
+    Connections remaining, 329
 count : 4
 
 Layer, Arcs, Pads, Vias, Tracks, Texts, Fills, Regions, ComponentBodies
-    Top Layer, 6, 370, 0, 1070, 0, 40, 16, 0
-    Bottom Layer, 27, 126, 0, 707, 0, 47, 15, 0
-    Dimension, 0, 0, 0, 0, 0, 0, 0, 107
+    Top Layer, 0, 702, 0, 616, 0, 31, 1, 0
+    Bottom Layer, 8, 240, 0, 297, 0, 20, 1, 0
+    Dimension, 0, 0, 0, 0, 0, 0, 0, 216
     Board Outline, 1, 0, 0, 1, 0, 0, 0, 0
-    Multi-Layer, 0, 27, 197, 0, 0, 0, 1, 0
+    Fabrication., 0, 0, 0, 0, 0, 0, 0, 0
+    Multi-Layer, 0, 31, 100, 0, 0, 0, 1, 0
     Top Paste, 0, 0, 0, 0, 0, 0, 0, 0
-    Top Overlay, 11, 0, 0, 489, 227, 1, 0, 0
+    Top Overlay, 10, 0, 0, 1069, 443, 1, 0, 0
     Top Solder, 0, 0, 0, 0, 0, 0, 0, 0
     Bottom Solder, 0, 0, 0, 0, 0, 0, 0, 0
-    Bottom Overlay, 0, 0, 0, 3424, 165, 0, 0, 0
+    Bottom Overlay, 0, 0, 0, 3759, 269, 0, 0, 0
     Bottom Paste, 0, 0, 0, 0, 0, 0, 0, 0
     Drill Guide, 0, 0, 0, 0, 0, 0, 0, 0
     Keep-Out Layer, 0, 0, 0, 0, 0, 0, 1, 0
     Drill Drawing, 0, 0, 0, 0, 0, 0, 0, 0
-count : 14
+count : 15
 
 Drill Pairs, Vias
 count : 0
