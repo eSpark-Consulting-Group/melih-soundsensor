@@ -1,25 +1,11 @@
-Output: Gerber Files
-Type  : Gerber
+Output: Generates pick and place files
+Type  : Pick Place
 From  : Variant [[No Variations]] of Project [Sound_Sensor.PrjPcb]
-   Generated File[Sound_Sensor.GTO]
-   Generated File[Sound_Sensor.GTP]
-   Generated File[Sound_Sensor.GTS]
-   Generated File[Sound_Sensor.GTL]
-   Generated File[Sound_Sensor.GBL]
-   Generated File[Sound_Sensor.GBS]
-   Generated File[Sound_Sensor.GBP]
-   Generated File[Sound_Sensor.GBO]
-   Generated File[Sound_Sensor.GM2]
-   Generated File[Sound_Sensor.GPT]
-   Generated File[Sound_Sensor.GPB]
-   Generated File[Sound_Sensor.GD1]
-   Generated File[Sound_Sensor.GG1]
-   Generated File[Sound_Sensor.RUL]
-   Generated File[Sound_Sensor.EXTREP]
-   Generated File[Sound_Sensor.REP]
+   Generated File[Pick Place for Sound_Sensor.txt]
+   Generated File[Pick Place for Sound_Sensor.csv]
 
 
-Files Generated   : 16
+Files Generated   : 2
 Documents Printed : 0
 
-Finished Output Generation At 8:22:30 PM On 12/14/2022
+Finished Output Generation At 11:43:57 AM On 12/30/2022

@@ -1,0 +1,3 @@
+Layer Pairs Export File for PCB: E:\Melih-SoundSensor\Design-Files\Sound_Sensor.PcbDoc
+LayersSetName=Top_Bot_Thru_Holes|DrillFile=sound_sensor-roundholes.txt|DrillLayers=gtl,gbl
+LayersSetName=Top_Bot_Slot_Holes|DrillFile=sound_sensor-slotholes.txt|DrillLayers=gtl,gbl

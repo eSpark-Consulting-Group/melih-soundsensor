@@ -1,7 +1,7 @@
 Protel Design System Design Rule Check
 PCB File : E:\Melih-SoundSensor\Design-Files\Sound_Sensor.PcbDoc
-Date     : 12/29/2022
-Time     : 2:41:46 PM
+Date     : 12/30/2022
+Time     : 10:58:51 AM
 
 WARNING: Design contains shelved or modified (but not repoured) polygons. The result of DRC is not correct. Recommended to restore/repour all polygons and proceed with DRC again
    Polygon named: Polygon_2 In net GND On Bottom Layer
@@ -49,25 +49,12 @@ Processing Rule : Length Constraint (Min=0mil) (Max=100000mil) (All)
 Rule Violations :0
 
 Processing Rule : Matched Lengths(Tolerance=20mil) (All)
-   Violation between Matched Net Lengths: Between Net ADS_Pins.AIN0_N And Net ADS_Pins.AIN0_P Actual Difference against ADS_Pins.AIN0_P is: 190.093mil, Tolerance : 20mil. 
-   Violation between Matched Net Lengths: Between Net ADS_Pins.AIN1_N And Net ADS_Pins.AIN1_P Actual Difference against ADS_Pins.AIN1_P is: 539.626mil, Tolerance : 20mil. 
-   Violation between Matched Net Lengths: Between Net ADS_Pins.AIN2_N And Net ADS_Pins.AIN2_P Actual Difference against ADS_Pins.AIN2_P is: 360.422mil, Tolerance : 20mil. 
-   Violation between Matched Net Lengths: Between Net ADS_Pins.AIN3_N And Net ADS_Pins.AIN3_P Actual Difference against ADS_Pins.AIN3_P is: 407.263mil, Tolerance : 20mil. 
-   Violation between Matched Net Lengths: Between Net M2_OUT1_N And Net M2_OUT1_P Actual Difference against M2_OUT1_P is: 188.585mil, Tolerance : 20mil. 
-   Violation between Matched Net Lengths: Between Net M2_OUT2_N And Net M2_OUT2_P Actual Difference against M2_OUT2_P is: 741.109mil, Tolerance : 20mil. 
-   Violation between Matched Net Lengths: Between Net M2_OUT3_N And Net M2_OUT3_P Actual Difference against M2_OUT3_P is: 76.054mil, Tolerance : 20mil. 
-   Violation between Matched Net Lengths: Between Net M2_OUT4_N And Net M2_OUT4_P Actual Difference against M2_OUT4_P is: 740.297mil, Tolerance : 20mil. 
-   Violation between Matched Net Lengths: Between Net MIC_OUTS.OUT1_N And Net MIC_OUTS.OUT1_P Actual Difference against MIC_OUTS.OUT1_P is: 97.292mil, Tolerance : 20mil. 
-   Violation between Matched Net Lengths: Between Net PCM1_N And Net PCM1_P Actual Difference against PCM1_P is: 41.809mil, Tolerance : 20mil. 
-   Violation between Matched Net Lengths: Between Net PCM2_N And Net PCM2_P Actual Difference against PCM2_P is: 115.819mil, Tolerance : 20mil. 
-   Violation between Matched Net Lengths: Between Net PCM3_N And Net PCM3_P Actual Difference against PCM3_P is: 27.988mil, Tolerance : 20mil. 
-   Violation between Matched Net Lengths: Between Net PCM4_N And Net PCM4_P Actual Difference against PCM4_P is: 86.817mil, Tolerance : 20mil. 
-Rule Violations :13
+Rule Violations :0
 
 Processing Rule : Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)
 Rule Violations :0
 
 
-Violations Detected : 15
+Violations Detected : 2
 Waived Violations : 0
-Time Elapsed        : 00:00:03
+Time Elapsed        : 00:00:04

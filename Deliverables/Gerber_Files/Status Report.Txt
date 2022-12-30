@@ -1,0 +1,11 @@
+Output: Generates pick and place files
+Type  : Pick Place
+From  : Variant [[No Variations]] of Project [Sound_Sensor.PrjPcb]
+   Generated File[Pick Place for Sound_Sensor.txt]
+   Generated File[Pick Place for Sound_Sensor.csv]
+
+
+Files Generated   : 2
+Documents Printed : 0
+
+Finished Output Generation At 11:43:57 AM On 12/30/2022
