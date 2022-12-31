@@ -1,12 +1,12 @@
 Altium Designer Pick and Place Locations
-E:\Melih-SoundSensor\Design-Files\Project Outputs for Sound_Sensor\Pick Place for Sound_Sensor.txt
+C:\Users\XPENDER\Documents\GitHub\Melih-SoundSensor\Design-Files\Project Outputs for Sound_Sensor\Pick Place for Sound_Sensor.txt
 
 ========================================================================================================================
 File Design Information:
 
-Date:       30/12/22
-Time:       11:43
-Revision:   b9a206a8329e8341b539bcc52383fc89880524d0
+Date:       01/01/23
+Time:       01:03
+Revision:   d860b60143e1ec916a0f70611953c9c1d3122261
 Variant:    No variations
 Units used: mil
 

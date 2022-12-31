@@ -228,4 +228,5 @@ D284  RECTANGULAR        27.685      31.622       0.000 FLASH     270.000
 D285  ROUNDED             8.000       8.000       0.000 FLASH       0.000
 D286  ROUNDED             1.000       1.000       0.000  LINE       0.000
 D287  ROUNDED             2.000       2.000       0.000  LINE       0.000
-D288  ROUNDED             2.667       2.667       0.000  LINE       0.000
+D288  ROUNDED            16.000      16.000       0.000  LINE       0.000
+D289  ROUNDED            14.000      14.000       0.000  LINE       0.000

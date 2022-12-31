@@ -1,4 +1,4 @@
-DRC Rules Export File for PCB: E:\Melih-SoundSensor\Design-Files\Sound_Sensor.PcbDoc
+DRC Rules Export File for PCB: C:\Users\XPENDER\Documents\GitHub\Melih-SoundSensor\Design-Files\Sound_Sensor.PcbDoc
 RuleKind=SolderMaskExpansion|RuleName=SolderMaskExpansion|Scope=Board|Minimum=4.00
 RuleKind=Width|RuleName=Width|Scope=Board|Minimum=8.00
 RuleKind=Clearance|RuleName=Clearance|Scope=Board|Minimum=7.00
