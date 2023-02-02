@@ -1,11 +1,7 @@
 Protel Design System Design Rule Check
 PCB File : E:\Melih-SoundSensor\Design-Files\Sound_Sensor.PcbDoc
-Date     : 12/30/2022
-Time     : 10:58:51 AM
-
-WARNING: Design contains shelved or modified (but not repoured) polygons. The result of DRC is not correct. Recommended to restore/repour all polygons and proceed with DRC again
-   Polygon named: Polygon_2 In net GND On Bottom Layer
-   Polygon named: Polygon_1 In net GND On Top Layer
+Date     : 2/2/2023
+Time     : 11:24:05 AM
 
 Processing Rule : Clearance Constraint (Gap=7mil) (All),(All)
 Rule Violations :0
@@ -17,9 +13,7 @@ Processing Rule : Un-Routed Net Constraint ( (All) )
 Rule Violations :0
 
 Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
-   Violation between Modified Polygon: Polygon Shelved  (Polygon_1) on Top Layer 
-   Violation between Modified Polygon: Polygon Shelved  (Polygon_2) on Bottom Layer 
-Rule Violations :2
+Rule Violations :0
 
 Processing Rule : Width Constraint (Min=8mil) (Max=50mil) (Preferred=22mil) (All)
 Rule Violations :0
@@ -55,6 +49,6 @@ Processing Rule : Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (
 Rule Violations :0
 
 
-Violations Detected : 2
+Violations Detected : 0
 Waived Violations : 0
-Time Elapsed        : 00:00:04
+Time Elapsed        : 00:00:07
