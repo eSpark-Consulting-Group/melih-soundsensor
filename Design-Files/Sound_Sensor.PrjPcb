@@ -403,14 +403,6 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[GeneratedDocument1]
-DocumentPath=Project Outputs for Sound_Sensor\Pick Place for Sound_Sensor.csv
-DItemRevisionGUID=
-
-[GeneratedDocument2]
-DocumentPath=Project Outputs for Sound_Sensor\Pick Place for Sound_Sensor.txt
-DItemRevisionGUID=
-
 [Configuration1]
 Name=Sources
 ParameterCount=0
