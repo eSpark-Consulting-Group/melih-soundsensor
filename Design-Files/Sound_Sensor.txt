@@ -1,7 +1,7 @@
 Board Information Report
 Filename     : E:\Melih-SoundSensor\Design-Files\Sound_Sensor.PcbDoc
-Date         : 2/3/2023
-Time         : 7:12:36 PM
+Date         : 2/6/2023
+Time         : 8:38:28 PM
 Time Elapsed : 00:00:00
 
 General
@@ -10,24 +10,24 @@ General
 count : 2
 
 Routing Information
-    Routing completion, 71.91%
+    Routing completion, 99.73%
     Connections, 737
-    Connections routed, 530
-    Connections remaining, 207
+    Connections routed, 735
+    Connections remaining, 2
 count : 4
 
 Layer, Arcs, Pads, Vias, Tracks, Texts, Fills, Regions, ComponentBodies
-    Top Layer, 37, 756, 0, 1619, 0, 83, 0, 0
-    Bottom Layer, 69, 258, 0, 1315, 0, 90, 0, 0
+    Top Layer, 7, 756, 0, 2054, 0, 123, 0, 0
+    Bottom Layer, 7, 258, 0, 1483, 0, 111, 0, 0
     Dimension, 0, 0, 0, 0, 0, 0, 0, 258
     Board Outline, 1, 0, 0, 4, 0, 0, 0, 0
     Fabrication., 0, 0, 0, 0, 0, 0, 0, 0
-    Multi-Layer, 0, 31, 378, 0, 0, 0, 2, 0
+    Multi-Layer, 0, 31, 461, 0, 0, 0, 2, 0
     Top Paste, 0, 0, 0, 0, 0, 0, 0, 0
     Top Overlay, 9, 0, 0, 1275, 534, 1, 0, 0
     Top Solder, 0, 0, 0, 0, 0, 0, 0, 0
     Bottom Solder, 0, 0, 0, 0, 0, 0, 0, 0
-    Bottom Overlay, 1, 0, 0, 3787, 308, 0, 0, 0
+    Bottom Overlay, 1, 0, 0, 3793, 307, 0, 0, 0
     Bottom Paste, 0, 0, 0, 0, 0, 0, 0, 0
     Drill Guide, 0, 0, 0, 0, 0, 0, 0, 0
     Keep-Out Layer, 0, 0, 0, 0, 0, 0, 1, 0
