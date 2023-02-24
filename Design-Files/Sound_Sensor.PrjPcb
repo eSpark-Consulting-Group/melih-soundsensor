@@ -403,129 +403,79 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document22]
-DocumentPath=Gerber Files.Cam
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=
-
-[Document23]
-DocumentPath=NC Drill Files.Cam
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=
-
 [GeneratedDocument1]
-DocumentPath=Project Outputs for Sound_Sensor\Design Rule Check - Sound_Sensor.html
-DItemRevisionGUID=
-
-[GeneratedDocument2]
-DocumentPath=Project Outputs for Sound_Sensor\Pick Place for Sound_Sensor.csv
-DItemRevisionGUID=
-
-[GeneratedDocument3]
-DocumentPath=Project Outputs for Sound_Sensor\Pick Place for Sound_Sensor.txt
-DItemRevisionGUID=
-
-[GeneratedDocument4]
 DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor-RoundHoles.TXT
 DItemRevisionGUID=
 
-[GeneratedDocument5]
-DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor-SlotHoles.TXT
-DItemRevisionGUID=
-
-[GeneratedDocument6]
+[GeneratedDocument2]
 DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.DRR
 DItemRevisionGUID=
 
-[GeneratedDocument7]
+[GeneratedDocument3]
 DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.EXTREP
 DItemRevisionGUID=
 
-[GeneratedDocument8]
+[GeneratedDocument4]
 DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.GBL
 DItemRevisionGUID=
 
-[GeneratedDocument9]
+[GeneratedDocument5]
 DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.GBO
 DItemRevisionGUID=
 
-[GeneratedDocument10]
+[GeneratedDocument6]
 DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.GBP
 DItemRevisionGUID=
 
-[GeneratedDocument11]
+[GeneratedDocument7]
 DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.GBS
 DItemRevisionGUID=
 
-[GeneratedDocument12]
+[GeneratedDocument8]
 DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.GD1
 DItemRevisionGUID=
 
-[GeneratedDocument13]
+[GeneratedDocument9]
 DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.GG1
 DItemRevisionGUID=
 
-[GeneratedDocument14]
+[GeneratedDocument10]
 DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.GM2
 DItemRevisionGUID=
 
-[GeneratedDocument15]
+[GeneratedDocument11]
 DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.GPB
 DItemRevisionGUID=
 
-[GeneratedDocument16]
+[GeneratedDocument12]
 DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.GPT
 DItemRevisionGUID=
 
-[GeneratedDocument17]
+[GeneratedDocument13]
 DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.GTL
 DItemRevisionGUID=
 
-[GeneratedDocument18]
+[GeneratedDocument14]
 DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.GTO
 DItemRevisionGUID=
 
-[GeneratedDocument19]
+[GeneratedDocument15]
 DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.GTP
 DItemRevisionGUID=
 
-[GeneratedDocument20]
+[GeneratedDocument16]
 DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.GTS
 DItemRevisionGUID=
 
-[GeneratedDocument21]
+[GeneratedDocument17]
 DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.LDP
 DItemRevisionGUID=
 
-[GeneratedDocument22]
+[GeneratedDocument18]
 DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.REP
 DItemRevisionGUID=
 
-[GeneratedDocument23]
+[GeneratedDocument19]
 DocumentPath=Project Outputs for Sound_Sensor\Sound_Sensor.RUL
 DItemRevisionGUID=
 
