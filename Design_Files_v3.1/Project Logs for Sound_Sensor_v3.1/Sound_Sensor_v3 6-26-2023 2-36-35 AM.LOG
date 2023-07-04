@@ -1,0 +1,14 @@
+Change Component DesignItemId : Designator=U3 Old DesignItemId=ESP32-S3-WROOM-1-N16R8 New DesignItemId=ESP32-S3-WROOM-1-N8R2
+Change Component Comment : Designator=U3 Old Comment=ESP32-S3-WROOM-1-N16R8 New Comment=ESP32-S3-WROOM-1-N8R2
+Change Component Description : Designator=U3 Old Description=SMD MODULE, ESP32-S3R8 WITH 3.3V New Description=SMD,18x25.5mm WiFi Modules ROHS
+Change component parameters: Designator = "U3" ("U3"); Footprint = "41-SMD Module"; UniqueID = "\HHRUKNAX\LKEDRKYO" ("\HHRUKNAX\LKEDRKYO")
+Change component parameters (AddParameter): Name = "Category"; Value = "Uncategorized"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink1Description"; Value = "LCSC"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink1URL"; Value = "https://www.lcsc.com/product-detail/WiFi-Modules_Espressif-Systems-ESP32-S3-WROOM-1-N8R2_C2913204.html"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Item Type"; Value = "Module"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "LCSC Part Number"; Value = "C2913204"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "Espressif Systems"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer Part Number"; Value = "ESP32-S3-WROOM-1-N8R2"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RoHS"; Value = "No"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier 1"; Value = "Digi-Key"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier Part Number 1"; Value = "1965-ESP32-S3-WROOM-1-N8R2-ND"; VariantName = "[No Variations]"
