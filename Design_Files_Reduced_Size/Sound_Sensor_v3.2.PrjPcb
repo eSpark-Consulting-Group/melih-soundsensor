@@ -129,7 +129,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=CPIJKQOV
 
 [Document6]
 DocumentPath=Controller_Sheet.Harness
@@ -214,7 +214,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=OKHWRIXO
 
 [Document11]
 DocumentPath=Top_Sheet.SchDoc
@@ -232,10 +232,6 @@ ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
-
-[GeneratedDocument1]
-DocumentPath=Project Outputs for Sound_Sensor_v3.1\Design Rule Check - Sound_Sensor_v3.html
-DItemRevisionGUID=
 
 [Configuration1]
 Name=Sources
