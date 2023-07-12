@@ -53,7 +53,7 @@ AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
 AnnotateSuffix=
 AnnotateScope=All
-AnnotateOrder=0
+AnnotateOrder=-1
 DoLibraryUpdate=1
 DoDatabaseUpdate=1
 ClassGenCCAutoEnabled=1
@@ -61,7 +61,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=MTCNBXOA
+DocumentUniqueId=
 
 [Document2]
 DocumentPath=ADC_Section.Harness
@@ -87,7 +87,7 @@ AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
 AnnotateSuffix=
 AnnotateScope=All
-AnnotateOrder=1
+AnnotateOrder=-1
 DoLibraryUpdate=1
 DoDatabaseUpdate=1
 ClassGenCCAutoEnabled=1
@@ -95,7 +95,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=WMYPHGBN
+DocumentUniqueId=
 
 [Document4]
 DocumentPath=Connector_Sheet.Harness
@@ -121,7 +121,7 @@ AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
 AnnotateSuffix=
 AnnotateScope=All
-AnnotateOrder=2
+AnnotateOrder=-1
 DoLibraryUpdate=1
 DoDatabaseUpdate=1
 ClassGenCCAutoEnabled=1
@@ -155,7 +155,7 @@ AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
 AnnotateSuffix=
 AnnotateScope=All
-AnnotateOrder=3
+AnnotateOrder=-1
 DoLibraryUpdate=1
 DoDatabaseUpdate=1
 ClassGenCCAutoEnabled=1
@@ -163,7 +163,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=QDMGTPWO
+DocumentUniqueId=
 
 [Document8]
 DocumentPath=Sensor_Sheet.SchDoc
@@ -172,7 +172,7 @@ AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
 AnnotateSuffix=
 AnnotateScope=All
-AnnotateOrder=4
+AnnotateOrder=-1
 DoLibraryUpdate=1
 DoDatabaseUpdate=1
 ClassGenCCAutoEnabled=1
@@ -180,7 +180,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=KELLMHJF
+DocumentUniqueId=
 
 [Document9]
 DocumentPath=Sensor_Sheet.Harness
@@ -223,7 +223,7 @@ AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
 AnnotateSuffix=
 AnnotateScope=All
-AnnotateOrder=5
+AnnotateOrder=-1
 DoLibraryUpdate=1
 DoDatabaseUpdate=1
 ClassGenCCAutoEnabled=1
@@ -231,11 +231,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=OORGPBXB
-
-[GeneratedDocument1]
-DocumentPath=Project Outputs for Sound_Sensor_v3.2\Design Rule Check - Sound_Sensor_v3.html
-DItemRevisionGUID=
+DocumentUniqueId=
 
 [Configuration1]
 Name=Sources
@@ -511,12 +507,42 @@ OutputName20=WireList Netlist
 OutputDocumentPath20=
 OutputVariantName20=
 OutputDefault20=0
+OutputType21=SIMetrixNetlist
+OutputName21=SIMetrix
+OutputDocumentPath21=
+OutputVariantName21=
+OutputDefault21=0
+OutputType22=SIMPLISNetlist
+OutputName22=SIMPLIS
+OutputDocumentPath22=
+OutputVariantName22=
+OutputDefault22=0
+OutputType23=XSpiceNetlist
+OutputName23=Mixed Sim Netlist
+OutputDocumentPath23=
+OutputVariantName23=
+OutputDefault23=0
 
 [OutputGroup2]
 Name=Simulator Outputs
 Description=
 TargetPrinter=Microsoft Print to PDF
 PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
+OutputType1=AdvSimNetlist
+OutputName1=Mixed Sim
+OutputDocumentPath1=
+OutputVariantName1=
+OutputDefault1=0
+OutputType2=SIMetrixSimulation
+OutputName2=SIMetrix
+OutputDocumentPath2=
+OutputVariantName2=
+OutputDefault2=0
+OutputType3=SIMPLISSimulation
+OutputName3=SIMPLIS
+OutputDocumentPath3=
+OutputVariantName3=
+OutputDefault3=0
 
 [OutputGroup3]
 Name=Documentation Outputs
