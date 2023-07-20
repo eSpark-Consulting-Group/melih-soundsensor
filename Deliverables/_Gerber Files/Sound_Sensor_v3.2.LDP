@@ -1,0 +1,3 @@
+Layer Pairs Export File for PCB: C:\Users\eSpark Cons Group\Documents\GitHub\Melih-SoundSensor\Melih-SoundSensor\Design_Files_Reduced_Size\Sound_Sensor_v3.2.PcbDoc
+LayersSetName=Top_Bot_Thru_Holes|DrillFile=sound_sensor_v3.2-roundholes.txt|DrillLayers=gtl,gbl
+LayersSetName=Top_Bot_Slot_Holes|DrillFile=sound_sensor_v3.2-slotholes.txt|DrillLayers=gtl,gbl
