@@ -1,0 +1,21 @@
+----------------------------------------------------------------------------------------------------------------------------------
+NCDrill File Report For: Sound_Sensor_v3.2.PcbDoc   22/07/2023  10:22:30 pm
+----------------------------------------------------------------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : Sound_Sensor_v3.2-RoundHoles.TXT
+ASCII SlotHoles File : Sound_Sensor_v3.2-SlotHoles.TXT
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      12mil (0.3mm)                                             Round             84        PTH        18.54inch (470.89mm)
+T2      24mil (0.6mm)                                             Slot              4         PTH        1.50inch (38.19mm)
+T3      36mil (0.92mm)                                            Round             2         PTH        0.20inch (5.00mm)
+T4      40mil (1.025mm)                                           Round             8         PTH        6.15inch (156.22mm)
+T5      118mil (3mm)                                              Round             4         PTH        5.26inch (133.68mm)
+T6      236mil (6mm)                                              Round             2         PTH        1.73inch (43.92mm)
+T7      24mil (0.62mm)                                            Round             2         NPTH       0.23inch (5.78mm)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              106
+
+Total Processing Time (hh:mm:ss) : 00:00:00
