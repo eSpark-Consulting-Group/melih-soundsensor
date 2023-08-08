@@ -1,12 +1,12 @@
 Board Information Report
 Filename     : C:\Users\eSpark\Documents\Melih-SoundSensor\Design-Files\Sound_Sensor_PoE_v3.2\Sound_Sensor_PoE_v3.2.PcbDoc
-Date         : 8/7/2023
-Time         : 2:58:04 PM
+Date         : 8/8/2023
+Time         : 4:38:01 PM
 Time Elapsed : 00:00:00
 
 Routing Information
-    Routing completion, 51.34%
+    Routing completion, 95.99%
     Connections, 374
-    Connections routed, 192
-    Connections remaining, 182
+    Connections routed, 359
+    Connections remaining, 15
 count : 4
